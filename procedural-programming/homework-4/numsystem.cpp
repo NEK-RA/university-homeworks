@@ -1,12 +1,68 @@
 #include "numsystem.h"
 
 bool runNumSystem(){
-  // for(int i=0; i< 16; i++){
-  //   char c = getLetter(i);
-  //   int n = getNum(c);
-  //   cout << "Итерация " << i << ": число " << i << " в 16сс является " << c << ", а в 10сс - " << n << endl;
-  // }
-  return true;
+	string num = "";
+	int base = 0, target = 0;
+	cout << "Введите число для перевода: ";
+	cin >> num;
+	cout << "Укажите исходную систему счисления: ";
+	if(cin >> base){
+		if(validate(num,base) && base >= 2){
+			cout << "Укажите целевую систему счисления: ";
+			if(cin >> target){
+				
+				int decimal = toDecimal(num,base);
+				string result = fromDecimal(decimal,target);
+				cout << "Результат перевода: " << result << endl;
+				return true;
+				
+			}else{
+				if(target < 2){
+					cout << "Минимальное основание системы счисления - 2. Программа будет перезапущена." << endl;
+				}else{
+					if(target > 36){
+						cout << "Максимальное основание системы счисления - 36 (10 цифр + английский алфавит). Программа будет перезапущена" << endl;
+					}else{
+						cout << "Основания систем счисления должны быть целыми десятичными числами. Программа будет перезапущена." << endl;
+					}
+				}
+				cin.clear();
+				cin.ignore(10000,'\n');
+				return false;
+			}
+		}else{
+			if(base < 2){
+				cout << "Минимальное основание системы счисления - 2. Программа будет перезапущена." << endl;
+			}else{
+				if(base > 36){
+					cout << "Максимальное основание системы счисления - 36 (10 цифр + английский алфавит). Программа будет перезапущена" << endl;
+				}else{
+					cout << "Число " << num << " не является корректным в системе счисления с основанием " << base << ". Программа будет перезапущена." << endl;
+				}
+			}			
+			cin.clear();
+			cin.ignore(10000,'\n');
+			return false;
+		}
+	}else{
+		cout << "Основания систем счисления должны быть целыми десятичными числами. Программа будет перезапущена." << endl;
+		cin.clear();
+		cin.ignore(10000,'\n');
+		return false;
+	}
+}
+
+bool validate(string num, int base){
+	bool isValid = true;
+	int single = -1;
+	for(unsigned int i = 0; i < num.size(); i++){
+		single = getNum(num[i]);
+		if(single >= base){
+			isValid = false;
+			break;
+		}
+	}
+	return isValid;
 }
 
 int getNum(char ch){
@@ -30,31 +86,46 @@ int getNum(char ch){
 }
 
 char getLetter(int num){
+	char c = ' ';
   if(num <= 9){
-    return num+'0';
+    c = num+'0';
   }else{
-    return num-10+'A';
+    c = num-10+'A';
   }
+  return c;
 }
 
-int findPower(int num, int base){
-  int power = 0;
-  bool found = false;
-  while(!found){
-    int powered = pow(base, power);
-    if(powered == num){
-      found = true;
-    }
-    if(powered > num){
-      found = true;
-      power--;
-    }
-    power++;
-  }
-  return power;
+int findLength(int num, int base){
+	if(num >= 1){
+		int counter = 0;
+		while(num > 0){
+			num = num / base;
+			counter++;
+		}
+		return counter;
+	}else{
+		return 1;
+	}
 }
 
 string fromDecimal(int num, int target){
+	//cout << num << " -> 2cc" << endl;
+	if(num == 0){
+		return "0";
+	}else{
+		// int length = findLength(num,target);
+		// int counter = 1;
+		string converted = "";
+		int last = -1;
+		while(num > 0){
+			last = num % target;
+			converted = getLetter(last) + converted;
+			num = num / target;
+			//counter++;
+		}
+		return converted;
+	}
+	
   /* my python converter
 def from_decimal_to(number,base):
   if number != 0:
@@ -70,9 +141,16 @@ def from_decimal_to(number,base):
   else:
     return "0"
   */
-  return "";
+  //return "";
 }
 
 int toDecimal(string num, int base){
-  return 0;
+	int power = num.size()-1;
+	// cout << num << "(" << base << "cc) -> ? (10cc)\n Max power = " << power << endl;
+	int decimal = 0;
+	for(unsigned int i=0; i < num.size(); i++){
+		decimal += getNum(num[i]) * pow(base,power-i);
+	}
+	// cout << "Result: " << decimal << endl;
+  return decimal;
 }
