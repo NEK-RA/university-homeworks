@@ -7,6 +7,7 @@
 using namespace std;
 
 int main() {
+	
   cout << "Задача <Заем>" << endl;
   bool loanDone = false;
   while(!loanDone){
@@ -23,7 +24,7 @@ int main() {
     cout << endl;
   }
   cout << endl << endl;
-
+	
   cout << "Задача <Копирование файла>" << endl;
   bool copyDone = false;
   while(!copyDone){
@@ -31,17 +32,17 @@ int main() {
     cout << endl;
   }
   cout << endl << endl;
-
-  cout << "Задача <Копирование файла>" << endl;
+  
+  cout << "Задача <Цифры>" << endl;
   bool numbersDone = false;
   while(!numbersDone){
     numbersDone = coutNumbers();
     cout << endl;
   }
   cout << endl << endl;
-
+	
   cout << "Задача <Сортировка букв>" << endl;
   sortLetters();
-
+	
   return 0;
 }
