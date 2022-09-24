@@ -40,9 +40,40 @@ bool calcRectangle(){
 }
 
 bool calcTriangle(){
+  float a = 0, h = 0;
+  cout << "Укажите параметры треугольника: " << endl;
+  cout << "Укажите длину основания: ";
+  if(cin >> a){
+    cout << "Укажите высоту: ";
+    if(cin >> h){
+      cout << "Площадь треугольника составляет: " << fixed << (a*h)/float(2) << endl;
+      return true;
+    }else{
+      cout << "Необходимо вводить числа (разделитель - точка)." << endl;
+      cin.clear();
+      cin.ignore(10000,'\n');
+      return false;
+    }
+  }else{
+    cout << "Необходимо вводить числа (разделитель - точка)." << endl;
+    cin.clear();
+    cin.ignore(10000,'\n');
+    return false;
+  }
   return true;
 }
 
 bool calcCircle(){
-  return true;
+  float r = 0;
+  cout << "Укажите радиус круга: ";
+  if(cin >> r){
+    cout << "Площадь круга составляет: " << M_PI * r * r << endl;
+    return true;
+  }
+  else{
+    cout << "Необходимо вводить числа (разделитель - точка)." << endl;
+    cin.clear();
+    cin.ignore(10000,'\n');
+    return false;
+  }
 }
