@@ -2,8 +2,8 @@
 
 /*
 Пояснение для исправления:
-в функции рандома использовать rand() и srand() чтобы высчитывалось на базе случайного числа
-а не на базе N, и вывести N разных результатов
+в функции рандома использовать rand() (и можно srand()) чтобы высчитывалось на базе случайного числа
+а не на базе N, но вывести N разных результатов
 */
 
 bool genNumber(){
@@ -12,10 +12,14 @@ bool genNumber(){
 	if(cin >> n){
 		cout << "Определено условиями задания:" << endl;
 		cout << "I вариант: m = 37, b = 3, c = 64" << endl;
-		randNum(n,37,3,64);
+		for(int i = 0; i < n; i++){
+			cout << "Число " << i+1 <<  ": " << randNum(37,3,64) << endl;	
+		}
 		cout << endl;
 		cout << "II вариант: m = 25173, b = 13849, c = 65537" << endl;
-		randNum(n,25173,13849,65537);
+		for(int i = 0; i < n; i++){
+			cout << "Число " << i+1 << ": " << randNum(25173,13849,65537) << endl;
+		}
 		cout << endl;
 		cout << "Укажите свои значения:" << endl;
 		cout << "Укажите значение m:";
@@ -24,7 +28,9 @@ bool genNumber(){
 			if(cin >> b){
 				cout << "Укажите значение c:";
 				if(cin >> c){
-					randNum(n,m,b,c);
+					for(int i = 0; i < n; i++){
+						cout << "Число " << i+1 << ": " << randNum(m,b,c) << endl;
+					}
 					return true;
 				}else{
 					cout << "Необходимо вводить только целые числа. Программа будет перезапущена." << endl;
@@ -52,16 +58,24 @@ bool genNumber(){
 	}
 }
 
-int randNum(int n, int m, int b, int c){
-	if(n==0){
+unsigned int randNum(int m, int b, int c){
+	int seed = rand() % 150000;
+	if(seed <= 15){
+		cout << "random seed = " << seed << endl;
+	}
+	if(seed==0){
 		return 0;
 	}else{
-		int s = 0;
-		cout << s << "\t";
-		for(int i=1;i<=n;i++){
-				s = (m * s + b) % c;
-				cout << s << "\t";
+		unsigned int s = 0;
+		if(seed <= 15){
+			cout << s;
 		}
-		return 0;
+		for(int i=1;i<=seed;i++){
+				s = (m * s + b) % c;
+				if(seed <= 15){
+					cout << " --> " << s;
+				}
+		}
+		return s;
 	}
 }

@@ -26,17 +26,17 @@ int main() {
 	// runGeometry();
 	// cout << endl << endl;
 
-	cout << "4. Задача <Былая слава>" << endl;
-	printFlag();
-	cout << endl << endl;
-
-	// cout << "7. Задача <Генератор псевдослучайных чисел>" << endl;
-	// bool numGenerated = false;
-	// while(!numGenerated){
-	// 	numGenerated = genNumber();
-	// 	cout << endl;
-	// }
+	// cout << "4. Задача <Былая слава>" << endl;
+	// printFlag();
 	// cout << endl << endl;
+
+	cout << "7. Задача <Генератор псевдослучайных чисел>" << endl;
+	bool numGenerated = false;
+	while(!numGenerated){
+		numGenerated = genNumber();
+		cout << endl;
+	}
+	cout << endl << endl;
 
   // cout << "9. Задача <Системы счисления>" << endl;
   // bool numConverted = false;

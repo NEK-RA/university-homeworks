@@ -1,5 +1,6 @@
 #include <iostream>
+#include <random>
 using namespace std;
 
-int randNum(int n, int m, int b, int c);
+unsigned int randNum(int m, int b, int c);
 bool genNumber();
