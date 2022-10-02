@@ -3,6 +3,7 @@
 #include "sign.h"
 #include "geometry.h"
 #include "timegone.h"
+#include "rome.h"
 #include "rand.h"
 #include "numsystem.h"
 using namespace std;
@@ -30,13 +31,22 @@ int main() {
 	// printFlag();
 	// cout << endl << endl;
 
-	cout << "7. Задача <Генератор псевдослучайных чисел>" << endl;
-	bool numGenerated = false;
-	while(!numGenerated){
-		numGenerated = genNumber();
+	cout << "6. Задача <Автоматный распознаватель>" << endl;
+	bool romeConverted = false;
+	while(!romeConverted){
+		romeConverted = convertRomeNumber();
 		cout << endl;
 	}
 	cout << endl << endl;
+
+
+	// cout << "7. Задача <Генератор псевдослучайных чисел>" << endl;
+	// bool numGenerated = false;
+	// while(!numGenerated){
+	// 	numGenerated = genNumber();
+	// 	cout << endl;
+	// }
+	// cout << endl << endl;
 
   // cout << "9. Задача <Системы счисления>" << endl;
   // bool numConverted = false;
