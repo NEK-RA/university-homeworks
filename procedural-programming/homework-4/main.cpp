@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include "filetask.h"
 #include "sign.h"
 #include "geometry.h"
@@ -9,6 +10,7 @@
 using namespace std;
 
 int main() {
+  setlocale(0, "");
 	// cout << "1. Задача <Файл>" << endl;
 	// bool ftDone = false;
 	// while(!ftDone){
@@ -55,4 +57,5 @@ int main() {
   //   cout << endl;
   // }
   // cout << endl << endl;
+  // system("pause");
 }
