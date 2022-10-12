@@ -4,8 +4,10 @@
 #include "sign.h"
 #include "geometry.h"
 #include "timegone.h"
+#include "sinus.h"
 #include "rome.h"
 #include "rand.h"
+#include "matrix.h"
 #include "numsystem.h"
 using namespace std;
 
@@ -32,14 +34,18 @@ int main() {
 	// cout << "4. Задача <Былая слава>" << endl;
 	// printFlag();
 	// cout << endl << endl;
-
-	cout << "6. Задача <Автоматный распознаватель>" << endl;
-	bool romeConverted = false;
-	while(!romeConverted){
-		romeConverted = convertRomeNumber();
-		cout << endl;
-	}
+  
+  cout << "5. Задача <Синусоида>" << endl;
+	printSinusoid();
 	cout << endl << endl;
+
+	// cout << "6. Задача <Автоматный распознаватель>" << endl;
+	// bool romeConverted = false;
+	// while(!romeConverted){
+	//	 romeConverted = convertRomeNumber();
+	//	 cout << endl;
+	// }
+	// cout << endl << endl;
 
 
 	// cout << "7. Задача <Генератор псевдослучайных чисел>" << endl;
@@ -49,6 +55,11 @@ int main() {
 	// 	cout << endl;
 	// }
 	// cout << endl << endl;
+  
+  // cout << "8. Задача <Умножение матриц>" << endl;
+  // multiplyMatrix();
+	// cout << endl << endl;
+  
 
   // cout << "9. Задача <Системы счисления>" << endl;
   // bool numConverted = false;
