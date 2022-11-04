@@ -1,10 +1,11 @@
 #include <iostream>
 #include "euclid.h"
 #include "eratosfen.h"
+#include "texts.h"
 using namespace std;
 
 int main(){
-  // /*
+  /*
   cout << "Задача <Алгоритм Евклида>" << endl;
   bool euclidDone = false;
   while(!euclidDone){
@@ -12,7 +13,7 @@ int main(){
     cout << endl;
   }
   cout << endl << endl;
-  // */
+  */
 
    /*
   cout << "Задача <Решето Эратосфена>" << endl;
@@ -23,4 +24,13 @@ int main(){
   }
   cout << endl << endl;
    */
+
+  cout << "Задача <Обработка текстовых файлов>" << endl;
+  string encrypted = letterMove();
+  bool fran = false;
+  while(!fran){
+    fran = analyzerPart(encrypted);
+    cout << endl;
+  }
+  cout << endl << endl;
 }
