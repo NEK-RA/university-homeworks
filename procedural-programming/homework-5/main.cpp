@@ -24,13 +24,15 @@ int main(){
   }
   cout << endl << endl;
    */
-
+  /*
   cout << "Задача <Обработка текстовых файлов>" << endl;
   string encrypted = letterMove();
+  // string encrypted = "wikicpp.txt.enc";
   bool fran = false;
   while(!fran){
     fran = analyzerPart(encrypted);
     cout << endl;
   }
   cout << endl << endl;
+  */
 }

@@ -91,7 +91,7 @@ pair<char,float> mostFrequent(map<char,int> m){
     total += it->second;
     it++;
   }
-  cout << "Total symbols: " << total << endl;
+  cout << "Всего символов: " << total << endl;
   it = m.begin();
   
   char result = it->first;
@@ -107,7 +107,7 @@ pair<char,float> mostFrequent(map<char,int> m){
     }
     it++;
   }
-  cout << "most frequent char is: " << result << " with frequency " << mf << "%\n\n\n---------\n\n\n";
+  // cout << "Наиболее часто встречаемый символ: " << result << " составляющий " << (mf * 100) << "% от текста.\n\n\n---------\n\n\n";
   return pair<char,float>(result,mf);
 }
 
@@ -126,7 +126,7 @@ map<char,int> analyze(string filename){
       // printMap(frequency);
     }
   }else{
-    cerr << "can't open file for reading" << endl;
+    cout << "Не удалось открыть файл для чтения" << endl;
   }
   source.close();
   return frequency;
@@ -154,7 +154,6 @@ map<char,int> processLine(string line, map<char,int> frequency){
     c = tolower(line[i]);
     if(c>='a' && c<='z'){
       exist = contains(frequency,c);
-      // cout << "Character \"" << c << "\" is found:" << exist << endl;
       if(exist){
         frequency[c]++;
       }else{
@@ -168,19 +167,16 @@ map<char,int> processLine(string line, map<char,int> frequency){
 }
 
 bool analyzerPart(string filename){
-  // string filename = "wikicpp.txt.enc";
   int choice = 0;
   map<char,int> target,base;
-  
   cout << "Подзадача <Вычисление частоты повтора символа в текстовом файле>" << endl;
-  cout << "По умолчанию будет открыт зашифрованный файл из предыдущей подзадачи(" << filename << "). Продолжить?" << endl;
-  cout << "1. Да" << endl;
-  cout << "2. Нет, указать свой файл" << endl;
+  cout << "Выберите вариант работы:" << endl;
+  cout << "1. Открыть файл, зашифрованный сдвигом по алфавиту на предыдущем этапе, и определить ключ с помощью вычилсения частоты символов" << endl;
+  cout << "2. Открыть другой файл и отобразить частоту символов в нем" << endl;
   cout << "Выбор (номер пункта): ";
   if(cin >> choice){
     if(choice>=1 && choice<=2){
       if(choice==1){
-
         base = analyze("wikilinux.txt");
         printMap(base);
         pair<char,float> mfb = mostFrequent(base);
@@ -189,20 +185,28 @@ bool analyzerPart(string filename){
         printMap(target);
         pair<char,float> mft = mostFrequent(target);
 
-        cout << "with normal lang the most frequent character is:" << endl;
-        cout << mfb.first << " with frequency " << mfb.second << "%" << endl;
+        cout << "В чистом виде (без шифра) чаще всего встречается:" << endl;
+        cout << mfb.first << ", составляющий " << (mfb.second * 100) << "% текста." << endl;
 
-        cout << "with text encrypted by caesar cipher the most frequent character is:" << endl;
-        cout << mft.first << " with frequency " << mft.second << "%" << endl;
+        cout << "В тексте, зашифрованном с помощью сдвига, чаще всего встречается:" << endl;
+        cout << mft.first << ", составляющий " << (mft.second * 100) << "% текста." << endl;
 
-        cout << "based on that, assuming that caesar move is: " << (mft.first - mfb.first) << " symbols" << endl;
+        cout << "Основываясь на этом предполагаемый сдвиг составляет: " << (mft.first - mfb.first) << " символов" << endl;
         
         return true;
       }else{
-        cout << "Не удалось открыть файл для чтения" << endl;
-        cin.clear();
-        cin.ignore(10000,'\n');
-        return false;
+        // выбран пункт 2
+        cout << "Укажите название файла для анализа частоты символов в нем: ";
+        cin >> filename;
+        
+        map<char,int> custom = analyze(filename);
+        printMap(custom);
+        pair<char,float> mf = mostFrequent(custom);
+
+        cout << "В указанном файле чаще всего встречается:" << endl;
+        cout << mf.first << ", составляющий " << (mf.second * 100) << "% текста." << endl;
+
+        return true;
       }
     }else{
       cout << "Доступный выбор состоит из номеров 1 и 2." << endl;
