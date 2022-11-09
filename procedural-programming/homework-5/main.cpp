@@ -2,6 +2,7 @@
 #include "euclid.h"
 #include "eratosfen.h"
 #include "texts.h"
+#include "sequence.h"
 using namespace std;
 
 int main(){
@@ -35,4 +36,14 @@ int main(){
   }
   cout << endl << endl;
   */
+  //  /*
+  // cout << "Задача <Ряды>" << endl;
+  // bool sequenceCalced = false;
+  // while(!sequenceCalced){
+  //   sequenceCalced = calcSequence();
+  //   cout << endl;
+  // }
+  // cout << endl << endl;
+  // checkString();
+  //  */
 }
