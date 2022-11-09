@@ -52,7 +52,30 @@ bool calcSequence(){
 }
 
 void checkString(){
-  locale::global(locale("ru_RU.UTF-8"));
+  /*
+  Задача НЕ ГОТОВА
+  wcout на фоне простого cout выдает следующий результат:
+
+  Подзадача: проверка строки на вхождение в нее всех символов слова "студенчество"
+2548B5 AB@>:C 4;O ?@>25@:8:
+
+
+2 1K; =0945=? false
+4 1K; =0945=? false
+5 1K; =0945=? false
+= 1K; =0945=? false
+> 1K; =0945=? false
+A 1K; =0945=? false
+B 1K; =0945=? false
+C 1K; =0945=? false
+G 1K; =0945=? false
+
+
+ AB@>:5 "" >BACBAB2C5B :0: <8=8<C< A8<2>; '2'. @>3@0<<0 1K;0 >AB0=>2;5=0 ?@8 =0E>645=88 ?5@2>3> >BACBAB2CNI53> A8<2>;0.
+B>3>2K9 @57C;LB0B - 7040G0 2K?>;=5=0? false
+
+  */
+  // locale::global(locale("ru_RU.UTF-8"));
   wstring target = L"студенчество";
   wstring line;
   map<wchar_t,bool> found;

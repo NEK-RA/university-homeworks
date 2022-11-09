@@ -37,13 +37,16 @@ int main(){
   cout << endl << endl;
   */
   //  /*
-  // cout << "Задача <Ряды>" << endl;
-  // bool sequenceCalced = false;
-  // while(!sequenceCalced){
-  //   sequenceCalced = calcSequence();
-  //   cout << endl;
-  // }
-  // cout << endl << endl;
-  // checkString();
+  cout << "Задача <Ряды>" << endl;
+  cout << "Подзадача: вычисление суммы y = SUM(k=0,inf){ (k+2)! / ((k+1)^2 * x^(2k+2)) }" << endl;
+  bool sequenceCalced = false;
+  while(!sequenceCalced){
+    sequenceCalced = calcSequence();
+    cout << endl;
+  }
+  cout << endl << endl;
+  cout << "Подзадача: проверка строки на вхождение в нее всех символов слова \"студенчество\"" << endl;
+  checkString();
+  cout << endl << endl;
   //  */
 }
