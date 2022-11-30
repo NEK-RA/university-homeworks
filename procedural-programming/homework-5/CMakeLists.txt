@@ -10,5 +10,6 @@ add_executable(
   eratosfen.h eratosfen.cpp 
   texts.h texts.cpp
   sequence.h sequence.cpp
+  fractional.h fractional.cpp
 )
 

@@ -75,7 +75,7 @@ G 1K; =0945=? false
 B>3>2K9 @57C;LB0B - 7040G0 2K?>;=5=0? false
 
   */
-  // locale::global(locale("ru_RU.UTF-8"));
+  locale::global(locale("ru_RU.UTF-8"));
   wstring target = L"студенчество";
   wstring line;
   map<wchar_t,bool> found;
