@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.5)
+
+project(monks-110 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_executable(monks-110 main.cpp)
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/110.txt DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+install(TARGETS monks-110
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
