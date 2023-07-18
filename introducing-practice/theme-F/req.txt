@@ -1,0 +1,6 @@
+bs4
+lxml
+vk-api
+requests
+pillow
+openpyxl
