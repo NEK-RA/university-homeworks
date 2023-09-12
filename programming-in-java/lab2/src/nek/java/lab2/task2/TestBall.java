@@ -6,12 +6,12 @@ public class TestBall {
     for(int i = 0; i < 5; i++){
       b.move(Math.sin(i)*10*i, Math.cos(i)*50);
     }
-    System.out.printf("Last ball coordinates: x=%.5f y=%.5f\n",b.getX(),b.getY());
+    System.out.printf("Последние координаты мяча: x=%.5f y=%.5f\n",b.getX(),b.getY());
     b.setX(123);
-    System.out.println("X coordinate changed to "+b.getX());
+    System.out.println("Координата X изменена на "+b.getX());
     b.setY(321);
-    System.out.println("Y coordinate changed to "+b.getY());
+    System.out.println("Координата Y изменена на "+b.getY());
     b.setXY(11, 22);
-    System.out.println("Ball position was set for both coordinates: "+b.toString());
+    System.out.println("Обе координаты были изменены: "+b.toString());
   }
 }

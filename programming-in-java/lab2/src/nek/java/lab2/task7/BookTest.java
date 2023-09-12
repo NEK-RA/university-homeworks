@@ -20,7 +20,7 @@ public class BookTest {
     for(int i = 0; i < rand.nextInt(maxAuthorName)+10; i++){
       authorName += characters.charAt(rand.nextInt(characters.length()));
     }
-    authorName += "(AuthorName)";
+    authorName += "(ИмяАвтора)";
     
     for(int i = 0; i < 20; i++){
       if(i != 0){
@@ -41,26 +41,26 @@ public class BookTest {
       }
       bookTitle += characters.charAt(rand.nextInt(characters.length()));
     }
-    bookTitle += "(Title)";
+    bookTitle += "(Наименование)";
     
     return new Book(authorName, mail, gender, bookTitle,writtenAt, publishedAt,amountPages);
   }
 
   public static void main(String[] args) {
     Book test = generate();
-    System.out.println("Test book info:");
-    System.out.println("Title: " + test.getTitle());
-    System.out.println("Written: " + test.getWrittenAt() + " year");
-    System.out.println("Published: " + test.getPublishedAt() + " year");
-    System.out.println("Amount of pages: " + test.getPages());
-    System.out.println("Author info:\n" + test.getAuthor());
+    System.out.println("Информация о тестовой книге:");
+    System.out.println("Наименование: " + test.getTitle());
+    System.out.println("Написана в: " + test.getWrittenAt() + " году");
+    System.out.println("Опубликована в: " + test.getPublishedAt() + " году");
+    System.out.println("Кол-во страниц: " + test.getPages());
+    System.out.println("Информация об авторе:\n" + test.getAuthor());
 
-    System.out.println("\nChanging title...");
-    test.setTitle("New Title");
+    System.out.println("\nИзменяем наименование...");
+    test.setTitle("Читаемое наименование");
     System.out.println(test);
 
     System.out.println("\n\n\n\n\n");
-    System.out.println("Making a bookshelf...\n");
+    System.out.println("Создаем книжную полку...\n");
 
     BookShelf bs = new BookShelf(5);
     for(int i = 0; i < bs.capacity; i++){
@@ -68,7 +68,7 @@ public class BookTest {
     }
     System.out.println(bs);
 
-    System.out.println("\nThe most recent book published:\n" + bs.getNewerBook());
-    System.out.println("\nThe most old book published:\n" + bs.getOlderBook());
+    System.out.println("\nНаиболее поздняя из опубликованных книг:\n" + bs.getNewerBook());
+    System.out.println("\nНаиболее ранняя из опубликованных книг:\n" + bs.getOlderBook());
   }
 }

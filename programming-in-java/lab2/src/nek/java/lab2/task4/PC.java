@@ -47,7 +47,7 @@ public class PC {
 
     @Override
     public String toString() {
-        return String.format("PC specs:\nCPU Model: %s\nExternal GPU: %b\nGPU Model: %s\nPrice: %.5f",
-                this.cpu, this.externalGPU, this.gpu, this.price);
+        return String.format("Характеристики ПК:\nМодель процессора: %s\nДискретная видеокарта: %b\nМодель " +
+                "видеокарты: " + "%s\nЦена: %.5f", this.cpu, this.externalGPU, this.gpu, this.price);
     }
 }

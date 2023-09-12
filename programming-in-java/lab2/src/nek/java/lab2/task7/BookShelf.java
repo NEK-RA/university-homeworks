@@ -24,7 +24,7 @@ public class BookShelf {
             this.books[amount] = book;
             amount++;
         }else{
-            System.out.println("No space left for new books");
+            System.out.println("Места для новых книг не осталось");
         }
     }
 
@@ -50,11 +50,11 @@ public class BookShelf {
 
     @Override
     public String toString() {
-        String output = "BookShelf begin:\n-------------------------------\n";
+        String output = "Начало книжной полки:\n-------------------------------\n";
         for(Book b : this.books){
             output += String.format("%s - %s (%d)\n", b.getAuthor().getName(), b.getTitle(), b.getPublishedAt());
         }
-        output += "-------------------------------\nBookShelf end";
+        output += "-------------------------------\nКонец книжной полки";
         return output;
     }
 }

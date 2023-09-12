@@ -12,17 +12,17 @@ public class DogKennel {
     }
 
     public static void main(String[] args) {
-        System.out.println("Dog list at the beginning: "+dogs);
+        System.out.println("Изначальный список собак: "+dogs);
 
-        addDogs(new Dog("Test1", 3), new Dog("Test2", 9));
-        System.out.println("Dog list after 2 dogs added: "+dogs);
+        addDogs(new Dog("ТестКличка", 3), new Dog("ТестПрозвище", 9));
+        System.out.println("Список собак после добавления 2-х собак: "+dogs);
 
-        System.out.println("First dog before changes: " + dogs.getFirst());
-        System.out.println("Human age of it: " + dogs.getFirst().getHumanAge() + " year");
-        dogs.getFirst().setNickname("Firrrst");
+        System.out.println("Первая собака до изменений: " + dogs.getFirst());
+        System.out.println("Человеческий возраст: " + dogs.getFirst().getHumanAge() + " лет");
+        dogs.getFirst().setNickname("Перррвая");
         dogs.getFirst().setAge(14);
-        System.out.println("Changed data of first dog: " + dogs.getFirst());
-        System.out.println("And it's human age: " + dogs.getFirst().getHumanAge());
+        System.out.println("Изменены данные для первой собаки: " + dogs.getFirst());
+        System.out.println("И ее человеческий возраст: " + dogs.getFirst().getHumanAge());
 
         System.out.println("\n\n");
         addDogs(
@@ -32,7 +32,7 @@ public class DogKennel {
                 new Dog("Test dog Y", 6),
                 new Dog("Test dog Z", 7)
         );
-        System.out.println("Dog list after 5 more dogs added: "+dogs);
+        System.out.println("Список собак после 5 добавлений: "+dogs);
     }
 
 }

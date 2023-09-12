@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class HowMany {
     public static void main(String[] args) {
         String text = "";
-        System.out.println("Enter the text below. Each new line will append to previously entered text. To stop the " +
-                "process enter the EOI keyword (line with it will be dropped):\n");
+        System.out.println("Введите текст ниже. Каждая новая строка дополнит введенный текст. Для завершения введите " +
+                "EOI (строка с данным словом будет исключена из текста):\n");
         String line = "";
         Scanner in = new Scanner(System.in);
         while(true) {
@@ -18,7 +18,7 @@ public class HowMany {
         }
 
         text = text.replaceAll("[^a-zа-я-]+"," ").trim();
-        System.out.println("\n\nCleaned text:\n" + text);
-        System.out.println("Amount of words: " + text.split(" ").length);
+        System.out.println("\n\nОчищенный текст:\n" + text);
+        System.out.println("Количество слов: " + text.split(" ").length);
     }
 }

@@ -29,8 +29,8 @@ public class Author{
 
   @Override
   public String toString(){
-    return "Name: " + this.name + "\n" +
-    "Email: " + this.email + "\n" +
-    "Gender: " + this.gender;
+    return "Имя: " + this.name + "\n" +
+    "E-mail: " + this.email + "\n" +
+    "Пол: " + this.gender;
   }
 }

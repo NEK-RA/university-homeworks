@@ -25,9 +25,9 @@ public class Poker {
             deck.add(suit + "K");
             deck.add(suit + "A");
         }
-        System.out.printf("Deck filled with %d cards:\n%s\n", deck.size(),deck);
+        System.out.printf("Колода заполнена %d картами:\n%s\n", deck.size(),deck);
         Collections.shuffle(deck);
-        System.out.println("Shuffled deck:\n"+deck);
+        System.out.println("Перетасованная колода:\n"+deck);
     }
 
     static String getCard(){
@@ -37,22 +37,25 @@ public class Poker {
 
     public static void main(String[] args) {
         fillDeck();
-        System.out.print("How much players: ");
+        System.out.print("Сколько игроков: ");
         Scanner sc = new Scanner(System.in);
         while(!sc.hasNextInt()){
             sc.next();
         }
         int players = sc.nextInt();
         if (players * 5 > deck.size()){
-            System.err.printf("Too many players! Deck has only %d cards, but %d players require %d cards! \n",
+            System.err.printf("Слишком много игроков! В колоде есть только %d карт(ы), в то время как для %d игроков " +
+                            "требуется %d " +
+                            "карт!" +
+                            " \n",
                     deck.size(), players,
                     players * 5);
             System.exit(1);
         }
-        System.out.println("Distributing cards...");
+        System.out.println("Раздаем карты...");
 
         for(int i = 0; i < players; i++) {
-            System.out.print("Player " + (i+1) + ": ");
+            System.out.print("Игрок " + (i+1) + ": ");
             for (int j = 0; j < 5; j++) {
                 System.out.print(getCard() + " ");
             }

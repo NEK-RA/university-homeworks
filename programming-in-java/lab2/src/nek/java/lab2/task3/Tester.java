@@ -13,16 +13,16 @@ public class Tester {
       if(first){
         first = false;
       }else{
-        System.out.print("Yet Another ");
+        System.out.print("Очередная ");
       }
-      System.out.println("Circle info:");
-      System.out.println("Center located in (x=" + c.getCenterX() +
+      System.out.println("Окружность:");
+      System.out.println("Центр расположен в (x=" + c.getCenterX() +
               "; y=" + c.getCenterY() + ")");
-      System.out.println("Circle radius is " + c.getRadius());
-      System.out.println("Changing all fields... (x*2, y*3, r/4)");
+      System.out.println("Радиус окружности: " + c.getRadius());
+      System.out.println("Изменяем все поля... (x*2, y*3, r/4)");
       c.setXY(c.getCenterX()*2, c.getCenterY()*3);
       c.setRadius(c.getRadius()/4);
-      System.out.println("Final circle info:\n" + c);
+      System.out.println("Окончательная информация об окружности:\n" + c);
       System.out.println("\n\n\n");
     }
   }

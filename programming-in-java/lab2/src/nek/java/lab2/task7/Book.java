@@ -59,6 +59,8 @@ public class Book {
 
   @Override
   public String toString(){
-    return String.format("Book ,,%s``\nAuthor: %s\nWritten at: %d\nPublished at: %d\nAmount of pages: %d", this.title, this.author.toString(), this.writtenAt, this.publishedAt, this.pages);
+    return String.format("Книга ,,%s``\nАвтор:\n%s\nНаписана в: %d году\nОпубликована в: %d году\nКол-во страниц: %d",
+            this.title,
+            this.author.toString(), this.writtenAt, this.publishedAt, this.pages);
   }
 }

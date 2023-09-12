@@ -10,7 +10,7 @@ public class Shop implements Searchable {
 
     Shop(String name){
         this.name = name;
-        System.out.println("Show with name\"" + this.name + "\" was created");
+        System.out.println("Магазин с названием \"" + this.name + "\" был создан");
     }
 
     public void addPC(){
@@ -20,17 +20,17 @@ public class Shop implements Searchable {
         boolean external;
         double price;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter CPU model: ");
+        System.out.println("Укажите модель процессора: ");
         cpu = sc.nextLine();
-        System.out.println("Enter GPU model: ");
+        System.out.println("Укажите модель видеокарты: ");
         gpu = sc.nextLine();
-        System.out.println("GPU Type ([I]ntegrated or [E]xternal): ");
+        System.out.println("Укажите тип видеокарты ([I]Интегрированная или [E]Дискретная): ");
         do{
-            System.out.print("Please type response with capital letter: ");
+            System.out.print("Пожалуйста укажите ответ заглавной английской буквой: ");
             gpuType = sc.nextLine();
         }while(gpuType.charAt(0) != 'I' && gpuType.charAt(0) != 'E');
         external = gpuType.charAt(0) == 'E';
-        System.out.println("Enter PC price: ");
+        System.out.println("Укажите цену ПК: ");
         price = sc.nextDouble();
         this.items.add(new PC(cpu, gpu, external, price));
     }
@@ -53,6 +53,6 @@ public class Shop implements Searchable {
             data += pc.toString();
             data += "\n\n";
         }
-        return "List of PC in shop:\n"+data;
+        return "Список ПК в магазине:\n"+data;
     }
 }

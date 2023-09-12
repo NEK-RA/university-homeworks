@@ -72,6 +72,7 @@ public class Circle {
 
   @Override
   public String toString(){
-    return String.format("Circle{centerX=%.5f, centerY=%.5f, radius=%.5f}", this.centerX, this.centerY, this.radius);
+    return String.format("Окружность {центрX=%.5f, центрY=%.5f, радиус=%.5f}", this.centerX, this.centerY,
+            this.radius);
   }
 }

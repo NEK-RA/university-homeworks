@@ -6,7 +6,7 @@ public class Demo {
     public static void main(String[] args) {
         Shop shop = new Shop("SkyNet Computing");
         Scanner sc = new Scanner(System.in);
-        System.out.println("How much PC do you want to add: ");
+        System.out.println("Сколько ПК вы хотите добавить: ");
         int amount = 0;
         while(!sc.hasNextInt()){
             sc.next();
@@ -22,13 +22,13 @@ public class Demo {
         double targetLowerPrice = 0.0;
         double targetHigherPrice = 0.0;
 
-        System.out.println("Specify lower price: ");
+        System.out.println("Укажите нижний порог цены: ");
         while(!sc.hasNextDouble()){
             sc.next();
         }
         targetLowerPrice = sc.nextDouble();
 
-        System.out.println("Specify higher price: ");
+        System.out.println("Укажите верхний порог цены: ");
         while(!sc.hasNextDouble()){
             sc.next();
         }
@@ -37,14 +37,14 @@ public class Demo {
         PC[] searchResults = shop.searchByPriceBetween(targetLowerPrice, targetHigherPrice);
 
         if(searchResults.length > 0) {
-            System.out.println("Search results:");
+            System.out.println("Результаты поиска:");
             for (PC pc : searchResults) {
                 System.out.println(pc + "\n");
             }
             shop.removePC(searchResults[0]);
-            System.out.println("After deletion:\n" + shop);
+            System.out.println("После удаления:\n" + shop);
         }else{
-            System.out.println("There is no PC in shop, which will fit your price requests");
+            System.out.println("В магазине не нашлось ПК, соответствующего ценовому запросу");
         }
 
     }

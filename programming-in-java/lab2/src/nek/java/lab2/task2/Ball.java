@@ -33,14 +33,14 @@ class Ball{
   }
 
   public void move(double x, double y){
-    System.out.printf("Ball was at (%.5f, %.5f);",this.x, this.y);
+    System.out.printf("Мяч был в (%.5f, %.5f);",this.x, this.y);
     this.x += x;
     this.y += y;
-    System.out.printf(" moved to (%.5f, %.5f)\n",this.x, this.y);
+    System.out.printf(" перемещен в (%.5f, %.5f)\n",this.x, this.y);
   }
 
   @Override
   public String toString(){
-    return String.format("Ball coordinates: x=%.5f y=%.5f", this.x, this.y);
+    return String.format("Координаты мяча: x=%.5f y=%.5f", this.x, this.y);
   }
 }

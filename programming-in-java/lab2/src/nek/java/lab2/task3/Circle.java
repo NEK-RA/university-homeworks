@@ -35,6 +35,7 @@ public class Circle {
 
   @Override
   public String toString(){
-    return String.format("Circle with center in (%.5f, %.5f) and radius = %.5f", this.center.getX(), this.center.getY(), this.radius);
+    return String.format("Окружность с центром в (%.5f, %.5f) и радиусом r=%.5f", this.center.getX(),
+            this.center.getY(), this.radius);
   }
 }
