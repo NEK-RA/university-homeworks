@@ -17,10 +17,6 @@ public class Task5 {
             System.out.print("Число: ");
             num = stdin.nextLong();
             stdin.nextLine();
-            if(num - 103 > 0.0001){
-              System.out.printf("Число %.0f превышает допустимое для вычислений на Double значение.\n", num);
-              continue;
-            }
             if(num >= 0){
                 System.out.printf("!%d = %s\n", num, factorial(num));
             }
