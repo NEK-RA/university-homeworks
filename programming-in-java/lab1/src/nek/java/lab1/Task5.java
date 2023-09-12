@@ -1,5 +1,6 @@
 package nek.java.lab1;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Task5 {
@@ -10,32 +11,31 @@ public class Task5 {
         * работу метода.
         * */
         Scanner stdin = new Scanner(System.in);
-        double num = 0;
+        long num = 0;
         System.out.println("Для какого числа необходимо вычислить факториал? Для завершения укажите любое отрицательное число");
         do{
             System.out.print("Число: ");
-            num = stdin.nextDouble();
+            num = stdin.nextLong();
             stdin.nextLine();
             if(num - 103 > 0.0001){
               System.out.printf("Число %.0f превышает допустимое для вычислений на Double значение.\n", num);
               continue;
             }
             if(num >= 0){
-                System.out.printf("!%.0f", num);
-                System.out.printf(" = %.0f\n", factorial(num));
+                System.out.printf("!%d = %s\n", num, factorial(num));
             }
         }while(num >= 0);
         stdin.close();
     }
 
-    public static double factorial(double num){
-        double f = 1;
+    public static String factorial(double num){
         if (num < 2){
-            return f;
+            return "1";
         }
+        BigInteger f = BigInteger.valueOf(1);
         for(int i = 2; i <= num; i++){
-            f *= i;
+            f = f.multiply(BigInteger.valueOf(i));
         }
-        return f;
+        return f.toString();
     }
 }
