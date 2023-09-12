@@ -24,7 +24,7 @@ public class Task5 {
         stdin.close();
     }
 
-    public static String factorial(double num){
+    public static String factorial(long num){
         if (num < 2){
             return "1";
         }
