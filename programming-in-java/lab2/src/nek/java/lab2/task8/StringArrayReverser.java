@@ -12,9 +12,9 @@ public class StringArrayReverser {
                 tmp = words[k];
                 words[k] = words[k+1];
                 words[k+1] = tmp;
-                System.out.println(String.format("i=%d, k=%d  ==>  ",i,k) + Arrays.toString(words));
+//                System.out.println(String.format("i=%d, k=%d  ==>  ",i,k) + Arrays.toString(words));
             }
-            System.out.println();
+//            System.out.println();
         }
         System.out.println(Arrays.toString(words));
     }

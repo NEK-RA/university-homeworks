@@ -7,8 +7,8 @@ public class TestAuthor {
     String gender = "М";
     
     Author a = new Author(name, email, gender.charAt(0));
-    System.out.println("Имя -  "+ a.getName());
-    System.out.println("Почта до изменения - ");
+    System.out.println("Имя -  " + a.getName());
+    System.out.println("Почта до изменения - " + a.getEmail());
     email = "public@email";
     a.setEmail(email);
     System.out.printf("Пол - \"%c\"\n", a.getGender());

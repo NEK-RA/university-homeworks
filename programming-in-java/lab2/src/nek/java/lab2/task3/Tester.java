@@ -1,7 +1,7 @@
 package nek.java.lab2.task3;
 
 public class Tester {
-  private static int amount = 5;
+  private static int amount = 3;
   private static Circle[] objects = new Circle[amount];
 
   public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class Tester {
       c.setXY(c.getCenterX()*2, c.getCenterY()*3);
       c.setRadius(c.getRadius()/4);
       System.out.println("Окончательная информация об окружности:\n" + c);
-      System.out.println("\n\n\n");
+      System.out.println();
     }
   }
 }

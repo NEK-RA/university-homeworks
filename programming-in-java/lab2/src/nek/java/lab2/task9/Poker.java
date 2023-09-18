@@ -45,11 +45,7 @@ public class Poker {
         int players = sc.nextInt();
         if (players * 5 > deck.size()){
             System.err.printf("Слишком много игроков! В колоде есть только %d карт(ы), в то время как для %d игроков " +
-                            "требуется %d " +
-                            "карт!" +
-                            " \n",
-                    deck.size(), players,
-                    players * 5);
+                            "требуется %d карт!\n", deck.size(), players, players * 5);
             System.exit(1);
         }
         System.out.println("Раздаем карты...");
