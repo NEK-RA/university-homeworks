@@ -1,3 +1,5 @@
+package nek.java.lab5;
+
 class Task15{
 
   public static void recursiveReversedDigits(int n){
