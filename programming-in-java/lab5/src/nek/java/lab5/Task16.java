@@ -43,8 +43,6 @@ public class Task16 {
 
 
   public static void main(String[] args) {
-    ArrayList<Integer> numbers = getNumbers();
-    System.out.println(numbers);
-    System.out.println(countMax(numbers));
+    System.out.println("Количество элементов, равных максимальному: " + countMax(getNumbers()));
   }
 }
