@@ -1,0 +1,30 @@
+footer{
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(82, 75, 65);
+  padding: 20px 0px;
+}
+
+footer hr{
+  margin: auto;
+  width: 90%;
+}
+
+.footer-link{
+  text-decoration: none;
+  color: greenyellow;
+}
+
+.footer-link:visited{
+  color: green;
+}
+
+.footer-link:active{
+  color: yellow;
+  font-size: large;
+}
+
+address{
+  color: cyan;
+}

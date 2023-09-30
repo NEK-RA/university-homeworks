@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  color: #adaad6
+}
+
+header {
+  position: fixed;
+  top: 0px;
+
+  background-color: #474747;
+  color: white;
+  width: 100%;
+  height: 100px;
+  z-index: 2;
+}
+
+#logo-icon{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 35px;
+}
+
+#page-title{
+  position: absolute;
+  top: 5px;
+  left: 100px;
+}
+
+header > nav {
+  position: relative;
+  top: 45px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  border-radius: 5px;
+  padding: 10px;
+}
+
+header a {
+  text-decoration: none;
+  background-color: #3a3a3a;
+  padding: 7px 15px;
+  border-radius: 10px;
+}
+
+header a:hover {
+  background-color: #252525;
+  color: white;
+}
+
+main{
+  position: relative;
+  top: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  height: calc(100vh - 100px - 50px - 20px);
+  overflow-y: scroll;
+
+  padding: 10px;
+  margin-bottom: 50px;
+  background-color: black;
+  color: white;
+  font-size: larger;
+}
+
+main::-webkit-scrollbar{
+  display: none;
+}
+
+main figure:nth-child(odd){
+  float: left;
+  margin: 10px;
+}
+
+main figure:nth-child(even){
+  float: right;
+  margin: 10px;
+}
+
+figure > img {
+  width: 150px;
+  height: 60px;
+}
+
+article{
+  position: sticky;
+  top: 0px;
+
+  padding: 10px;
+  margin: 20px auto;
+  width: 75%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #2e2e2e;
+  color: white;
+
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+
+thead{
+  background-color: #6d6d6d;
+}
+table, thead, th, td {
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+ul{
+  list-style: square inside;
+  margin-left: 20px;
+  padding: 20px;
+}
+
+.div-inline-block{
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+  background-color: black;
+  border: 5px dotted white;
+}
+
+.share{
+  position: absolute;
+  bottom: 70px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  background-color: #7575754d;
+  color: #adaad680;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.share:hover{
+  background-color: #757575;
+  color: #ffffff;
+}
+
+footer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  bottom: 0px;
+
+  background-color: #474747;
+  color: white;
+  width: 100%;
+  height: 50px ;
+}

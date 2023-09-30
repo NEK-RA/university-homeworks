@@ -1,0 +1,50 @@
+header {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(82, 75, 65);
+  padding: 10px 0px;
+}
+
+nav{
+  min-height:100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 20px 10px;
+}
+
+/* Отношение селекторов */
+nav > a {
+  font-style: italic;
+}
+
+.header-menu-links {
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0px 10px;
+  color: orangered;
+}
+
+/* Псевдо-классы */
+.header-menu-links:hover, .header-menu-links:active{
+  color: yellow;
+  border: 3px solid yellow;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.header-menu-links:visited{
+  color: #cc8500
+}
+
+#logo{
+  border: 5px dotted #ff3c00;
+  border-radius: 30px;
+  width: 70px;
+  height: 70px;
+  margin: 5px 10px;
+  box-sizing: border-box;
+}
