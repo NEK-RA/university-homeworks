@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Exo+2:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+main{
+  background-color: black;
+  color: white;
+  font-family: 'Comfortaa', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+#description{
+  padding: 10px;
+  text-align: justify;
+}
+
+form {
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #444444;
+}
+
+form input:focus, form textarea:focus{
+  background-color: white;
+  box-shadow: 0px 0px 25px 5px white;
+}
+
+/*
+Grid-layout
+https://habr.com/ru/companies/macloud/articles/564182/
+https://doka.guide/css/grid-guide/
+*/
+.container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(30px, auto);
+  justify-items: start;
+  align-items: center;
+  justify-content: stretch;
+  align-content: stretch;
+  
+
+  padding: 5px;
+  border: 2px solid;
+  border-radius: 10px;
+  width: 85vw;
+
+  font-size: 1.2em;
+  background-color: #383838;
+}
+
+.element-left{
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.element-right{
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+legend{
+  padding: 5px;
+  border: 2px solid;
+  border-radius: 10px;
+  background-color: #383838;
+}
+
+input, textarea, select{
+  width: 100%;
+  font-size: 1.1em;
+  font-family: 'Comfortaa', sans-serif;
+  border-radius: 5px;
+  border: none;
+  padding: 3px 10px;
+}
+
+input::placeholder, textarea::placeholder{
+  font-style: italic;
+  color: #5757579c;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+input:valid, textarea:valid, select:valid{
+  background-color: rgb(118, 233, 118);
+}
+
+input:invalid, textarea:invalid, select:invalid{
+  background-color: #f18484;
+  box-shadow: 0px 0px 25px 5px #f18484;
+}
+
+.file-picker{
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.file-picker:hover{
+  background-color: black;
+}
+
+#priorities{
+  border: none;
+  width: 100%;
+}
+
+#secretly{
+  height: 25px;
+  padding:5px 30px;
+  background-color: red;
+  color: green;
+}
+
+/*
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#technical_summary
+*/
+/* input[type="file" i]{
+  color: red;
+  background-color: blue;
+} */
+
+.submit-button{
+  padding: 15px;
+  border-radius: 20px;
+}

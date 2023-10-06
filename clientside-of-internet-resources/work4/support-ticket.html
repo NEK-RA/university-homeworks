@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support ticket form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Служба поддержки</h1>
+    <section id="description">
+      Здесь вы можете оставить сообщение об ошибке или обратиться за помощью. Учтите, что все поля представленной ниже формы являются обязательными!
+    </section>
+    <section>
+      <iframe width="360" height="210px" src="https://www.youtube-nocookie.com/embed/IvUU8joBb1Q?si=rKLmDQ3pxx_Avbva" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
+    <section>
+      <form action="" method="get">
+        
+        <fieldset class="container">
+          <legend>Персональные данные <button disabled><span class="material-icons">save</span></button></legend>
+          
+          <label for="fio" class="element-left">ФИО</label>
+          <input type="text" name="fio" id="fio" class="element-right" required placeholder="Иванов Иван Иванович" autofocus>
+          
+          <label for="mail" class="element-left">E-mail</label>
+          <input type="mail" name="mail" id="mail" class="element-right" required placeholder="your-mail@domain.tld" pattern="[A-Za-z0-9]+@[A-Za-z0-9]+(\.?[A-Za-z0-9])+">
+
+          <label for="phone" class="element-left">Телефон</label>
+          <input type="tel" name="phone" id="phone" class="element-right" required placeholder="+71234567890">
+
+          <label for="vercode" class="element-left">Код подтверждения</label>
+          <input type="password" name="vercode" id="vercode" class="element-right" required placeholder="В личном кабинете" minlength="10" maxlength="20">
+        </fieldset>
+
+        <br>
+        
+        <fieldset name="ticket-details" class="container">
+          <legend>Описание запроса <button><span class="material-icons">save</span></button></legend>
+
+          <label for="category" class="element-left">Категория</label>
+          <select name="category" id="category" class="element-right" required multiple size="3">
+            <option value="general">Общие вопросы</option>
+            <option value="technical">Технические вопросы</option>
+            <option value="financial">Финансовые вопросы</option>
+          </select>
+
+          <label for="priorities" class="element-left">Приоритет</label>
+          <fieldset name="priorities" class="element-right container" id="priorities">
+            <input type="radio" name="priorities" value="low" id="low-priority" class="element-left">
+            <label for="low-priority" class="element-right"> Низкий </label>
+            
+            <input type="radio" name="priorities" value="mid" id="mid-priority" class="element-left">
+            <label for="mid-priority" class="element-right">Средний</label>
+
+            <input type="radio" name="priorities" value="high" id="high-priority" class="element-left">
+            <label for="high-priority" class="element-right">Высокий</label>
+          </fieldset>
+
+          <label for="secretly" class="element-left">Секретность</label>
+          <input type="checkbox" class="element-right" name="secretly" id="secretly" checked>
+
+          <label for="timestamp" class="element-left">Дата</label>
+          <input type="datetime-local" name="timestamp" id="timestamp" class="element-right" required>
+
+          <label for="description" class="element-left">Детали (опишите как можно подробнее)</label>
+          <textarea class="element-right" name="description" id="description" rows="10" placeholder="Подробное описание" required></textarea>
+
+          <label for="attachments" class="element-left">Вложения (если необходимо)</label>
+          <input type="file" name="attachments" id="attachments" class="element-right file-picker" multiple>
+        </fieldset>
+        
+        <br>
+        
+        <input type="button" class="submit-button" value="Оставить заявку">
+      
+      </form>
+    </section>
+    <h1>Наше расположение на карте</h1>
+    <iframe title="MIREA on Google Maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30277.29142186672!2d37.48889418165262!3d55.6651110652013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54dc1d23b51c3%3A0x74763ed59c81ccb6!2z0KDQotCjINCc0JjQoNCt0JA!5e0!3m2!1sru!2sru!4v1696366160741!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </main>
+</body>
+</html>
+
+<!-- 
+  1. Создать форму form (можно разбить на несколько разных форм для использования всех необходимых элементов) с использованием атрибута method и следующими элементами:
+- Элементов <input> с атрибутом type со значениями:
+  - text +
+  - tel +
+  - email +
+  - password +
+  - file +
+  - checkbox +
+  - radio +
+  - submit +
+  - datetime-local +
+  и со следующими другими атрибутами: name, id (зависит от метода
+  добавления элемента), checked, min, max, pattern, placeholder, required. +
+- Элемента(-ов) <button> +
+- Элемента(-ов) <textarea> с атрибутами cols, rows, maxlegth, minlength, placeholder, required +
+- Элементов <fieldset> и <legend> +
+- Элементов <label> с атрибутами for, name (зависит от метода добавления элемента) +
+-  Элементов <select> и <option> с атрибутами multiple, required, size +
+
+2. Задать стилизацию через CSS для всей(-х) формы (или форм): цвета фона/заливки элементов, цвета фона и границы полей ввода (использовать псевдокласс :focus, задающий стиль для элемента, который находится в фокусе, когда курсор установлен на то или иное поле формы) и других элементов, внешние и внутренние отступы (использовать относительные единицы измерения), шрифты и т.д. +
+
+3. Использовать псевдоэлемент ::placeholder для стилизации подсказки под атрибутом placeholder +
+
+4. Встроить карту (например, из Google Maps) на веб-страницу с помощью <iframe> +
+
+5. Добавить элемент <video> (например, с YouTube) на веб-страницу через <iframe> +
+ -->
