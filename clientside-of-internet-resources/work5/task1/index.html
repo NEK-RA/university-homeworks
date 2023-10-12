@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Современные приложения для Java разработки</title>
+  <link rel="stylesheet" href="styles/empty.css" media="(width < 300px), (height < 300px)">
+  <link rel="stylesheet" href="styles/mobile.css" media="(width >= 300px) and (width < 650px)">
+  <link rel="stylesheet" href="styles/desktop.css" media="(width >= 650px)">
+</head>
+
+<body>
+
+  <header>
+    <img src="./img/java-mascot.jpg" id="logo" alt="Duke - Java mascot">
+
+    <h2 id="page-title">Java Dev Tools</h2>
+
+
+    <input type="checkbox" id="burger-menu-opener">
+    <label for="burger-menu-opener" id="burger-menu">
+      <span class="material-icons" id="burger-menu-icon">menu</span>
+    </label>
+
+    <nav>
+
+      <a href="#ide" class="navlink" title="Список инструментов для разработки">
+          Java IDE
+      </a>
+      
+      <a href="https://www.oracle.com/java/technologies/downloads/" title="Официальный JDK от компании Oracle" class="navlink">
+          OracleJDK
+      </a>
+
+      <a href="https://axiomjdk.ru/pages/axiom-jdk/" title="Сертифицированный ФСТЭК комплект JDK от российской компании Bellsoft" class="navlink">
+          AxiomJDK
+      </a>
+
+      <a href="#footer" title="Цель сайта" class="navlink">
+          О сайте
+      </a>
+
+      <a href="#contacts" title="Наши контакты" class="navlink">
+          Контакты
+      </a>
+
+      <a href="" class="navlink" title="Скоро появятся">
+          Соц.сети
+      </a>
+    </nav>
+
+  </header>
+
+  <main>
+    <section class="section-a">
+      <article class="dialog warning">
+        <span class="material-icons">warning</span>
+        Сайт еще находится в разработке
+      </article>
+
+      <article class="dialog info">
+        <span class="material-icons">info</span>
+        Вышла версия Java 21 с долгосрочной поддержкой. 
+        <a href="https://blogs.oracle.com/java/post/the-arrival-of-java-21" target="_blank">
+          <span class="material-icons">open_in_new</span>
+        </a>
+      </article>
+    </section>
+
+
+    <section class="section-b">
+      <a href="#ide">
+        <h1 id="ide">Список современных IDE</h1>
+      </a>
+          <p>Исторически, появлялось множество различных сред - от более простых, предназначенных преимущественно для обучения, до комплексных сред, направленных не только на язык, но и некоторые наиболее устоявшиеся фреймворки и библиотеки вокруг него.</p>
+          <p> Время пощадило, вероятно, только расширяемые всевозможными плагинами приложения, а именно:</p>
+          <ol type="I" start="1">
+            <li>
+              <strong>IntelliJ IDEA</strong>
+              - Среда разработки, предназначенная для разработки на Java, с поддержкой таких библиотек, фреймворков и систем сборок как:
+              <ul>
+                <li>Ant <sub>система сборки</sub></li>
+                <li>Maven <sub>система сборки</sub></li>
+                <li>Gradle <sub>система сборки</sub></li>
+                <li>JUnit <sup>TM</sup></li>
+                <li>Spring <sup>TM</sup></li>
+                <li>И многие другие, благодаря поддержке плагинов.</li>
+              </ul>
+            </li>
+            <li><strong>Visual Studio Code</strong> - приложение, изначально представляющее из себя просто редактор кода, но в силу относительной легковесности и крайне широкой поддержки всевозможных плагинов, может вполне конкурировать с комплексными IDE, а иногда и <em>рекомендуется в качестве основного приложения</em> для ведения разработки</li>
+            <li><strong>Eclipse</strong> - одно из приложений-долгожителей. Некогда довольно популярная, с преимуществом в виде открытого исходного кода, однако по комфорту и оформлению проигрывает конкуренту с 1-го места</li>
+            <li><strong>NetBeans</strong> - Сравнительно легковесная среда, с довольно ограниченным количеством плагинов, чаще всего встречается в случае обучения языку Java, т.к. ее интерфейс сравнительно прост и  не перегружен</li>
+          </ol>
+    </section>
+
+
+    <section class="section-c">
+      <h1>Некоторые ссылки</h1>
+      <ul>
+        <li><a href="https://www.jetbrains.com/idea/" target="_blank"><span class="material-icons">open_in_new</span>IntelliJ IDEA</a></li>
+
+        <li><a href="https://code.visualstudio.com/" target="_blank"><span class="material-icons">open_in_new</span>VS Code</a></li>
+
+        <li><a href="https://eclipseide.org/" target="_blank"><span class="material-icons">open_in_new</span>Eclipse</a></li>
+
+        <li><a href="https://netbeans.org/" target="_blank"><span class="material-icons">open_in_new</span>NetBeans</a></li>
+      </ul>
+    </section>
+
+
+    <section class="section-d">
+      <figure>
+        <img src="рисунок1.png" alt="План разметки">
+        <figcaption>Как небходимо было разметить содержимое</figcaption>
+      </figure>
+    </section>
+
+
+    <section class="section-e">
+      <h3>Раздел Е. Опросы:</h3>
+      
+
+
+      <fieldset name="best-ide" aria-required="true">
+        <legend>А какую среду предпочитаете вы?</legend>
+          
+        <label>
+          <input type="radio" name="best-ide" value="IntelliJ IDEA">
+          IntelliJ IDEA
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="best-ide" value="VS Code">
+          Visual Studio Code
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="best-ide" value="Eclipse">
+          Eclipse IDE
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="best-ide" value="NetBeans">
+          NetBeans
+        </label>
+      </fieldset>
+
+
+      <fieldset name="positives">
+        <legend>Плюсы выбранной среды</legend>
+
+        <label>
+          <input type="checkbox" name="positives" value="IntelliJ IDEA">
+          Оформление
+        </label>
+        <br>
+        <label>
+          <input type="checkbox" name="positives" value="">
+          Ресурсоемкость
+        </label>
+        <br>
+        <label>
+          <input type="checkbox" name="positives" value="">
+          Интеграции
+        </label>
+        <br>
+        <label>
+          <input type="checkbox" name="positives" value="">
+          Универсальность
+        </label>
+        <br>
+        <label>
+          <input type="checkbox" name="positives" value="Eclipse">
+          Поддерживаемые платформы
+        </label>
+
+      </fieldset>
+
+      <button>Проголосовать</button>
+    </section>
+    
+     
+  </main>
+  
+  <footer id="footer">
+    <p>
+      Данная страница разработана в учебных целях, для освоения веб-технологий, в частности - работе с Flexbox
+    </p>
+    <p>
+      В данный момент используются только <strong>HTML5</strong> и <strong>CSS3</strong>
+    </p>
+    <address id="contacts">Где нас найти: <strong>РТУ МИРЭА</strong>, в перерывах между пар</address>
+  </footer>
+</body>
+</html>
+
+<!-- 
+Задание 1. Создать с помощью Flexbox адаптивные макеты своих сайтов под устройства как показано на рисунках-примерах (макеты можно модифицировать под свою семантическую структуру сайта):
+Рисунок 1 - см файл рисунок1.png +
+Рисунок 2 - см файл рисунок2.png +
+
+Примечания для макета на рисунке 2:
+1. Используйте свойства visibility и opacity. +
+
+Свойство visibility показывает и прячет элемент от глаз пользователя практически так же, как это делает opacity. И в том, и в другом случае элемент не виден, но механизм работы этих свойств разный. Если при помощи opacity можно гибко изменять прозрачность элемента и делать его, например, видимым на 33% (0 – полная прозрачность, 1 – полная непрозрачность), то свойство visibility имеет только два состояния: visible (видимый) и hidden (элемент не виден на странице, но занимает отведённое ему место и влияет на поток документа).
+
+2. Используйте комбинаторы наследования для меню-бургера. +
+3. Используйте псевдоэлементы ::before и ::after для меню-бургера.
+4. Используйте псевдокласс :checked для меню-бургера. + 
+5. Используйте свойство transform со значениями rotate(0/45deg/90deg) (т.е. вращение в градусах) для работы с меню-бургером. +
+-->

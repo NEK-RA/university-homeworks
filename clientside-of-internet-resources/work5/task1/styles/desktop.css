@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Exo+2:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 18px;
+}
+
+body {
+  background-color: #3a3531;
+}
+
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 10vw;
+
+  background-color: #524b41;
+  box-shadow: 0px 0px 10px 10px #524b41;
+  font-family: 'Comfortaa', sans-serif;
+  height: 70px;
+  width: 100vw;
+  z-index: 1;
+}
+
+#logo {
+  position: fixed;
+  top: 5px;
+  left: 10px;
+  width: 60px;
+  border: none;
+  border-radius: 10px;
+}
+
+#page-title{
+  position: fixed;
+  left: calc(calc(100vw - 80px - 390px)/2);
+  top: 24px;
+  font-size: 22px;
+  color: #d89f49;
+}
+
+#burger-menu{
+  display: none;
+  position: fixed;
+  right: 10px;
+  top: 15px
+}
+
+#burger-menu-icon {
+  font-size: 40px;
+  color: #d89f49;
+}
+
+#burger-menu-opener{
+  display: none;
+}
+
+nav {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  height: 70px;
+  width: 390px;
+  padding: 5px;
+
+  font-size: 20px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+
+  color: #d89f49;
+  border-radius: 10px;
+}
+
+a, strong {
+  color: #d8ca49;
+}
+
+.navlink{
+  padding: 5px 5px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.navlink:hover{
+  background-color: #3b3936;
+}
+
+main{
+  margin-top: 70px;
+  min-height: calc(100vh - 70px - 50px);
+  padding: 10px;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  justify-items: center;
+  align-items: flex-start;
+  gap: 10px 2%;
+  font-family: 'Comfortaa', sans-serif;
+  color: #d89f49;
+}
+
+section{
+  border: 1px dashed;
+  border-radius: 10px;
+}
+
+.section-a{
+  order: 1;
+  flex-grow: 12;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  border-radius: 10px;
+}
+
+.section-a article{
+  flex-shrink: 5;
+  margin: 10px;
+  @media (width >= 650px) and  (width < 770px){
+    max-width: 250px;
+  }
+  @media (width >= 770px) and (width < 1100px){
+    max-width: 350px;
+  }
+  
+}
+
+.dialog{
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+
+.dialog .material-icons{
+  font-size: 2rem;
+}
+
+.warning, .warning > a{
+  background-color: lightpink;
+  color: red;
+  font-weight: 900;
+}
+
+.info, .info > a{
+  background-color: lightskyblue;
+  color: darkblue
+}
+
+.section-b{
+  order: 2;
+  flex-grow: 8;
+  width: 60%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 10px;
+}
+
+sub, sup{
+  font-size: 0.6rem;
+}
+
+em{
+  color: coral;
+}
+
+ul, ol, li {
+  margin: 5px 15px;
+}
+
+p::first-letter{
+  margin-left: 20px;
+}
+
+.section-c{
+  order: 4;
+  flex-grow: 4;
+  width: 30%;
+  padding: 10px;
+}
+
+.section-d{
+  order: 5;
+  flex-grow: 8;
+  width: 60%;
+  padding: 10px;
+}
+
+.section-d figure{
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #312d2a;
+  border-radius: 10px;
+}
+
+.section-d img{
+  max-width: 40vw;
+}
+
+.section-d figcaption{
+  margin-top: 5px;
+  text-align: center;
+}
+
+.section-e{
+  order: 3;
+  flex-grow: 4;
+  width: 30%;
+  padding: 10px;
+  background-color: #312d2a;
+  color: white;
+  font-family: 'Comic Sans MS', sans-serif;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-e fieldset{
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.section-e legend{
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.section-e input{
+  margin: 10px 5px;
+}
+
+.section-e button{
+  width: 80%;
+  height: 30px;
+  border-radius: 10px;
+  border: 5px outset;
+  font-size: 20px;
+}
+
+.section-e button:active{
+  border: 5px inset;
+}
+
+footer{
+  background-color: #524b41;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #d89f49;
+  font-family: 'Comic Sans MS', sans-serif;
+}

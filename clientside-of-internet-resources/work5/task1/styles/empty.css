@@ -1,0 +1,11 @@
+html::before{
+  background-color: white;
+  color: black;
+  display: block;
+  padding: 20px;
+  content: "К сожалению, экран вашего устройства или окно браузера слишком малы. Для корректного отображения сайта необходимо минимальное пространство в 300px как по ширине, так и по высоте"
+}
+
+html * {
+  display: none;
+}

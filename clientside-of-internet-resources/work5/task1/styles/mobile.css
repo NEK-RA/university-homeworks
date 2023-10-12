@@ -1,0 +1,100 @@
+@import url("desktop.css");
+
+body{
+
+}
+
+#page-title{
+  width: 170px;
+  left: calc(calc(100vw - 80px - 60px - 170px)/2 + 80px)
+}
+
+nav {
+  top: 65px;
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, height 0.3s;
+}
+
+#burger-menu{
+  display: block;
+}
+
+#burger-menu-icon{
+  transform: rotate(0deg);
+  transition: transform 0.5s;
+}
+
+#burger-menu-opener:checked ~ * #burger-menu-icon {
+  transition: transform 0.5s;
+  transform: rotate(-60deg);
+}
+
+
+#burger-menu-opener:checked ~ nav {
+  top: 65px;
+  height: 70%;
+  width: 100%;
+  padding: 5px;
+  z-index: 1;
+
+  font-size: 20px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-content: stretch;
+
+  background-color: #524b41;
+  color: #d89f49;
+  border-radius: 10px;
+
+  overflow: auto;
+  opacity: 1;
+  transition: opacity 0.3s, height 0.3s;
+}
+
+.navlink {
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  background-color: #423d36;
+}
+
+main{
+  flex-direction: row;
+}
+
+.section-a{
+  order: 1;
+  flex-grow: 12;
+  width: 100%;
+  background-color: #524b41;
+}
+
+.section-b{
+  order: 2;
+  flex-grow: 12;
+  width: 100%;
+}
+
+.section-c{
+  order: 4;
+  flex-grow: 6;
+  width: 40vw;
+}
+
+.section-d{
+  order: 5;
+  flex-grow: 6;
+  width: 40vw;
+}
+
+.section-e{
+  order: 3;
+  flex-grow: 12;
+  width: 100%;
+}

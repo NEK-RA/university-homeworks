@@ -1,0 +1,88 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+header{
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  height: 50px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  box-shadow: 0px 0px 10px 5px black;
+  z-index: 3;
+}
+
+main{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  width: 100vw;
+  min-height: calc(100vh - 50px);
+
+  background-color: darkslategrey;
+  padding: 10px;
+}
+
+input{
+  display: none;
+}
+
+label{
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  
+  border: 5px solid rgb(141, 141, 141);
+  border-radius: 10px;
+  background-color: rgb(141, 141, 141);
+
+  @media (width < 300px){
+    max-width: 90vw;
+  }
+  @media (width >= 450px) and (width < 650px){
+    max-width: 45vw;
+  }
+  @media (width >= 650px) and (width < 850px) {
+    max-width: 30vw;
+  }
+  @media (width >= 850px) and (width < 1200px) {
+    max-width: 20vw;
+  }
+  @media (width >= 1150px){
+    max-width: 15vw;
+  }
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+}
+
+main > input:checked + label {
+  position: fixed;
+  top: 50px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1;
+  max-width: none;
+  max-height: none;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  padding: 10px;
+  background-color: rgba(65, 117, 117, 0.87);
+  border: none;
+  border-radius: 0px;
+}
