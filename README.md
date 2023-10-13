@@ -15,3 +15,5 @@
 ## Курс 2
 
 - [Программирование на Java (3 семестр - осень 2023)](programming-in-java/)
+- [Конфигурационное управление (3 семестр - осень 2023)](configuration-management/)
+- [Структуры и алгоритмы обработки данных (2 семестр - весна 2023)](data-structs-and-processing-algorithms/part-2)
