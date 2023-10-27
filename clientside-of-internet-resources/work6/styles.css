@@ -1,0 +1,119 @@
+@import url("button1.css");
+@import url("button2.css");
+@import url("button3.css");
+@import url("button4.css");
+@import url("float-notification.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  background-color: black;
+}
+
+
+main{
+  width: 95%;
+  margin: 30px auto;
+  box-sizing: border-box;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+  background-color: grey;
+}
+
+section{
+  box-sizing: border-box;
+  width: 100%;
+  background-color: white;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+#task1{
+  position: relative;
+  width: 100%;
+}
+
+video{
+  width: 100%;
+}
+
+#task1::after{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: calc(100% / 4);
+  left: calc(100% / 4);
+  right: calc(100% / 4);
+  max-height: 0px;
+  /* width: 200px; */
+  padding: 20px 20px;
+  overflow: hidden;
+  content: "";
+  background-color: transparent;
+  color: transparent;
+  transition: all 1s;
+  content: "Задание 1: выбрать 4 кнопки с видео и реализовать их";
+}
+
+#task1:hover::after{
+  background-color: black;
+  color: white;
+  max-height:500px;
+  border-radius: 25px;
+}
+
+.picture-cards{
+  background-color: transparent;
+  justify-content: space-around;
+}
+
+.pic-card{
+  background-color: black;
+  border-radius: 10px;
+  max-width: 120px;
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.pic-card figcaption{
+  margin-top: -20px;
+  margin-bottom: 10px;
+  opacity: 0;
+  max-height: 0px;
+  text-align: center;
+  transition: all 1s;
+}
+
+.pic-card:hover figcaption{
+  max-height: 100px;
+  opacity: 1;
+}
+
+.pic-card img{
+  max-width: 100px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+  transform: translatey(-30px);
+}

@@ -1,0 +1,240 @@
+.s4form{
+  position: relative;
+  top: 150px;
+  margin-bottom: 150px;
+  @media (width <= 500px) {
+    left: 10vw;
+    right: 10vw;
+    width: 80vw;
+  }
+  @media (width > 500px) {
+    width: 400px;
+    left: calc(calc(100vw - 400px) / 2);
+  }
+  --form-blur: blur(10px);
+  --form-bg-color: rgba(143, 143, 143, 0.3);
+  --form-shadow-dark: 0 0 30px 10px rgba(0, 0, 0, 0.3);
+  --form-shadow-light: 0 0 10px 3px white;
+  --box-1-size: 50px;
+  --box-2-size: 120px;
+  --box-3-size: 80px;
+  --box-4-size: calc(var(--box-2-size) *0.8);
+  --box-5-size: 10vw;
+}
+
+form {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: var(--form-bg-color);
+  color: white;
+  border: 1px solid var(--form-bg-color);
+  box-shadow: var(--form-shadow);
+  backdrop-filter: var(--form-blur);
+  font-family: monospace;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  gap: 15px;
+  z-index: 1;
+}
+
+form h1{
+  align-self: flex-start;
+  font-weight: 900;
+  font-size: 2em;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 5px solid white;
+}
+
+form a{
+  color: orange;
+  text-decoration: none;
+}
+
+form span{
+  font-family: 'Comfortaa', monospace;
+}
+
+form input{
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: rgba(92, 92, 92, 0.5);
+  color: white;
+  box-shadow: var(--form-shadow);
+  backdrop-filter: var(--form-blur);
+  border: none;
+  outline: none;
+  transition: all .3s;
+}
+
+form > div > input{
+  box-sizing: border-box;
+  width: 100%;
+}
+
+form input::placeholder{
+  color: lightgrey;
+}
+
+form input:focus{
+  background-color: lightgrey;
+  color: #393e46;
+  box-shadow: var(--form-shadow-light);
+}
+
+form input:focus::placeholder{
+  color: grey;
+}
+
+#signin-btn{
+  background-color: white;
+  color: #60656b;
+  align-self: flex-start;
+  padding: 13px 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50px;
+  border: none;
+}
+
+#signin-btn:hover{
+  box-shadow: 0 0 5px 1px white;
+}
+
+#signin-btn:active{
+  box-shadow: var(--form-shadow-light);
+}
+
+.form-box{
+  position: absolute;
+  background-color: var(--form-bg-color);
+  backdrop-filter: var(--form-blur);
+  border-radius: 20px;
+  @media (width < 500px){
+    max-width: 10vw;
+  }
+  box-shadow: var(--form-shadow-dark);
+  border: 1px solid var(--form-bg-color);
+  z-index: 0;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes b1moves{
+  from {
+    transform: translateY(0px);
+  }
+  to{
+    transform: translateY(90px);
+  }
+}
+
+#box1{
+  width: var(--box-1-size);
+  height: var(--box-1-size);
+  left: 35%;
+  top: calc(-2 * var(--box-1-size));
+  animation-name: b1moves;
+}
+
+@keyframes b2moves{
+  from {
+    transform: translateY(0px);
+    opacity: 0.0;
+  }
+  to{
+    transform: 
+      translateY(90px) 
+      translateX(-12px);
+    opacity: 1.0;
+  }
+}
+
+#box2{
+  width: var(--box-2-size);
+  height: var(--box-2-size);
+  left: -20%;
+  top: calc((100% - var(--box-2-size)) / 2.5);
+  z-index: 1;
+  animation-name: b2moves;
+  animation-delay: 1s;
+  animation-duration: 7s;
+}
+
+@keyframes b3moves{
+  from {
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(5turn);
+  }
+}
+
+#box3{
+  width: var(--box-3-size);
+  height: var(--box-3-size);
+  top: -10%;
+  right: -10%;
+  animation-name: b3moves;
+}
+
+@keyframes b4moves{
+  from {
+    transform: scale(0.1);
+  }
+  to{
+    transform: scale(1.0);
+  }
+}
+
+#box4{
+  width: var(--box-4-size);
+  height: var(--box-4-size);
+  bottom: calc(var(--box-4-size) / 1.5);
+  right: -10%;
+  z-index: 1;
+  animation-name: b4moves;
+}
+
+@keyframes b5moves{
+  from {
+    transform: translateY(0px);
+  }
+  25%{
+    transform: 
+      translateY(50px);
+  }
+  50%{
+    transform: 
+      translateX(50px)
+      translateY(50px) ;
+  }
+  75%{
+    transform: 
+      translateY(100px) 
+      translateX(100px);
+  }
+  to{
+    transform: 
+      translateY(0px) 
+      translateX(0px);
+  }
+}
+
+#box5{
+  width: var(--box-5-size);
+  height: var(--box-5-size);
+  bottom: -10%;
+  left: 20%;
+  animation-name: b5moves;
+  animation-duration: 10s;
+}

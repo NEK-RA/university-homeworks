@@ -1,0 +1,47 @@
+.btn4-wrapper{
+  position: relative;
+  background-color: darkorange;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  box-shadow: 
+    inset 2px 2px 2px 1px rgb(255, 174, 0),
+    5px 5px 10px grey;
+  cursor: pointer;
+  user-select: none;
+  font-family: sans-serif;
+  /* overflow: hidden; */
+  transition: color .3s, box-shadow .3s;
+}
+
+.btn4-wrapper::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+  background-color: #ffffff57;
+  height: 0%;
+  transition: height .3s;
+}
+
+
+.btn4-wrapper:hover{
+  color: black;
+  box-shadow: 
+  inset 2px 2px 2px 1px rgb(255, 255, 255),
+  5px 5px 10px grey;
+}
+
+.btn4-wrapper:active{
+  box-shadow: 
+  inset 2px 2px 2px 1px rgb(255, 255, 255),
+  3px 3px 5px grey;
+}
+
+.btn4-wrapper:hover::after{
+  height: 100%;
+  top: initial;
+  bottom: 0;
+}

@@ -1,0 +1,59 @@
+.btn2-wrapper{
+  background-color: orangered;
+  color: white;
+  box-shadow: 
+    inset 2px 2px 2px 1px orange,
+    5px 5px 10px grey;
+  min-width: 220px;
+  height: 50px;
+  user-select: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  font-family: monospace;
+  font-weight: bold;
+  transition: background-color .5s, color .5s, box-shadow .5s;
+}
+
+.btn2-wrapper:hover{
+  background-color: white;
+  color:orangered;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.btn2-wrapper:active{
+  background-color: rgb(250, 230, 230);
+  color:darkred;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.btn2-top, .btn2-bottom{
+  background-color: orangered;
+  width: 0px;
+  height: 3px;
+  transition: width 1s, background-color .3s;
+}
+
+.btn2-top{
+  align-self: flex-end;
+}
+
+.btn2-bottom{
+  align-self: flex-start;
+}
+
+.btn2-wrapper:hover > .btn2-top,
+.btn2-wrapper:hover > .btn2-bottom{
+  width: 100%;
+}
+
+.btn2-wrapper:active > .btn2-top,
+.btn2-wrapper:active > .btn2-bottom{
+  background-color: darkred;
+}

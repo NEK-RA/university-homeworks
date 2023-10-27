@@ -1,0 +1,77 @@
+.social{
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 25px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  z-index: 1;
+  background-color: rgb(40, 40, 40);
+  color: #fff;
+  box-shadow: 0px 0px 10px 5px black;
+  padding: 10px 25px;
+  font-family: monospace;
+  font-weight: 900;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: box-shadow .1s, transform .1s;
+  position: relative;
+  user-select: none;
+  outline: none;
+}
+
+.social::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.linkedin::after{
+  background: linear-gradient(135deg,rgb(255, 208, 0), rgb(255, 0, 119));
+}
+
+.vk, .discord{
+  border-radius: 10px;
+}
+
+.vk::after{
+  background: linear-gradient(180deg, rgb(0, 162, 255), rgb(0, 89, 255));
+}
+
+.discord::after{
+  background: #8450ff;
+}
+
+.social:hover::after {
+  height: 100%;
+}
+
+.social:active{
+  transform: scale(0.98);
+  box-shadow: 0px 0px 5px 2px black;
+}
+
+.linkedin:active{
+  box-shadow: 0px 0px 10px 5px #ff7f50;
+}
+
+.vk:active{
+  box-shadow: 0px 0px 10px 5px #0059ff;
+}
+
+.discord:active{
+  box-shadow: 0px 0px 10px 5px #8450ff;
+}
+
+.social img{
+  width: 40px;
+  -webkit-user-drag: none;
+}

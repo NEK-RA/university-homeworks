@@ -1,0 +1,27 @@
+.btn1{
+  background-color: rgb(132, 0, 255);
+  color: white;
+  box-shadow: 
+    inset 0px 0px 5px 5px rgb(174, 0, 255),
+    5px 5px 10px grey;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-weight: bold;
+  transition: box-shadow .2s, background-color .3s;
+  user-select: none;
+  cursor: pointer;
+}
+
+.btn1:hover{
+  box-shadow: 
+    inset 0px 0px 5px 5px rgb(141, 0, 206),
+    -5px -5px 10px grey;
+}
+
+.btn1:active{
+  background-color: rgb(95, 0, 219);
+  box-shadow: 
+    inset 0px 0px 5px 5px rgb(141, 0, 206),
+    -2px -2px 10px grey;
+}

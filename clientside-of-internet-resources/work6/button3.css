@@ -1,0 +1,62 @@
+.btn3-wrapper{
+  width: 220px;
+  height: 60px;
+  border-radius: 5px;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0px;
+  font-family: 'Comic Sans MS', sans-serif;
+  cursor: pointer;
+}
+
+.btn3-wrapper > div{
+  margin-top: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: rgb(0, 195, 255);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 1s, height 1s, box-shadow 1s, background-color .3s;
+}
+
+.btn3-hover{
+  height: 0px;
+  transform: perspectiveZ(1000px) rotateX(90deg);
+  box-shadow: none;
+}
+
+.btn3-default{
+  height: 50px;
+  box-shadow: 
+    inset 2px 2px 2px 1px rgb(177, 233, 255),
+    5px 5px 10px grey;
+  transform: perspectiveZ(1000px) rotateX(0deg);
+}
+
+.btn3-wrapper:hover > .btn3-default{
+  height: 0px;
+  box-shadow: none;
+  transform: perspectiveZ(1000px) rotateX(-90deg);
+}
+
+.btn3-wrapper:hover > .btn3-hover{
+  height: 50px;
+  box-shadow: 
+    inset 2px 2px 2px 1px rgb(177, 233, 255),
+    5px 5px 10px grey;
+  transform: perspectiveZ(1000px) rotateX(0deg);
+}
+
+.btn3-wrapper:active > div{
+  box-shadow: 
+    inset 2px 2px 2px 1px rgb(115, 215, 255),
+    1px 1px 1px grey;
+  background-color: rgb(0, 137, 216);
+}

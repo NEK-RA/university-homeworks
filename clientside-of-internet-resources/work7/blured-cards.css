@@ -1,0 +1,87 @@
+.blured-cards-row{
+  /* margin-top: 50px; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 50px 5px;
+}
+
+.blured-card *{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.blured-card{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 10px 3px black;
+  border-radius: 20px;
+  transition: .5s;
+}
+
+.blured-card-title{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  clip-path: circle(150px at center 0);
+  text-align: center;
+  font-size: 2em;
+  padding-top: 40px;
+}
+
+.blured-card-content{
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.blured-card-content button{
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 10px 3px grey;
+  transition: .3s;
+}
+
+.blured-card-content button:active{
+  transform: scale(0.96);
+}
+
+.blured-card:nth-child(1) .blured-card-title{
+  background-color: red;
+}
+
+.blured-card:nth-child(2) .blured-card-title{
+  background-color: orange;
+}
+
+
+.blured-card:nth-child(3) .blured-card-title{
+  background-color: green;
+}
+
+.blured-cards-row:hover .blured-card{
+  filter: blur(5px);
+  transform: scale(0.9);
+}
+
+.blured-cards-row:hover .blured-card:hover{
+  transform: scale(1);
+  filter: blur(0px);
+}

@@ -1,0 +1,88 @@
+.float-notification{
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  max-width: 50px;
+  max-height: 50px;
+  color: white;
+  border-radius: 25px;
+  transition: width .3s, height .3s;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0px;
+  background-color: lightgreen;
+}
+
+.notify-counter{
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  background-color: lightgreen;
+  color: green;
+  padding: 1px 5px;
+  border-radius: 5px;
+}
+
+.notify-header{
+  background-color: green;
+  border-radius: 25px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.notify-header > .title{
+  display: none;
+}
+
+.notify-item{
+  height: 50px;
+  box-sizing: border-box;
+  padding: 5px 50px;
+  display: none;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: lightgreen;
+  color: green;
+  transition: all .3s;
+  border-radius: 10px;
+}
+
+.float-notification:hover{
+  max-width: 300px;
+  max-height: 500px;
+}
+
+.float-notification:hover .notify-counter{
+  right: -5px;
+  top: initial;
+  bottom: -5px;
+}
+
+.float-notification:hover .notify-header{
+  width: 100%;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.float-notification:hover .title{
+  display: block;
+}
+
+.float-notification:hover > .notify-item{
+  display: flex;
+}
+
+.float-notification:hover > .notify-item:hover{
+  background-color: green;
+  color: lightgreen;
+  transform: scale(1.1);
+  cursor: pointer;
+}
