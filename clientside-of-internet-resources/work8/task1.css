@@ -1,0 +1,218 @@
+/*
+mobile:
+
+header
+navigation
+main
+main
+main
+main
+sidebar
+ads
+footer
+
+***
+tablet:
+
+header
+navigation
+sidebar main
+sidebar main
+sidebar main
+sidebar main
+ads footer
+
+***
+desktop
+
+header
+sidebar navigation ads
+sidebar main ads
+footer
+*/
+
+body{
+  display: grid;
+  padding: 0px;
+  margin: 0px;
+  @media (width >= 320px) and (width < 600px) {
+    grid-template-areas: 
+    "header"
+    "navigation"
+    "main"
+    "sidebar"
+    "ads"
+    "footer"
+    ;
+  }
+  @media (width >= 600px) and (width < 1000px) {
+    grid-template-areas: 
+    "header header header header header"
+    "navigation navigation navigation navigation navigation"
+    "sidebar main main main main"
+    "ads footer footer footer footer"
+    ;
+  }
+  @media (width >= 1000px) and (width <= 2560px) {
+    grid-template-areas: 
+    "header header header header header"
+    "sidebar navigation navigation navigation ads"
+    "sidebar main main main ads"
+    "footer footer footer footer footer"
+    ;
+  }
+  --header-height: 40px;
+  --nav-height: 40px;
+  --footer-height: 100px;
+
+  --mobile-sidebar-height: 100px;
+  --mobile-ads-height: 100px;
+  --mobile-main-height: calc(100vh - var(--header-height) - var(--nav-height) - var(--mobile-sidebar-height) - var(--mobile-ads-height) - var(--footer-height)); 
+
+  --tablet-ads-height: var(--mobile-ads-height);
+  --tablet-sidebar-height: calc(100vh - var(--header-height) - var(--nav-height) - var(--footer-height)); 
+  --tablet-main-height: var(--tablet-sidebar-height);
+
+  --desktop-sidebar-height: calc(100vh - var(--header-height) - var(--footer-height));
+  --desktop-ads-height: var(--desktop-sidebar-height);
+  --desktop-main-height: calc(var(--desktop-sidebar-height) - var(--nav-height));
+}
+
+body > *{
+  background-color: grey;
+  margin: 0px;
+  box-sizing: border-box;
+  border: 1px solid white;
+}
+
+header{
+  grid-area: header;
+  height: var(--header-height);
+  text-align: center;
+
+  >h1{
+    margin: 0px;
+  }
+}
+
+nav{
+  grid-area: navigation;
+  min-height: var(--nav-height);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  >span{
+    background-color: aliceblue;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+}
+
+main{
+  grid-area: main;
+  @media (width >= 320px) and (width < 600px) {
+    min-height: var(--mobile-main-height);
+    min-width: 100%;
+  }
+  @media (width >= 600px) and (width < 1000px) {
+    min-height: var(--tablet-main-height);
+    min-width: 75vw;
+  }
+  @media (width >= 1000px) and (width <= 2560px) {
+    min-height: var(--desktop-main-height);
+    min-width: 65vw;
+  }
+  padding: 10px;
+}
+
+aside{
+  grid-area: sidebar;
+  @media (width >= 320px) and (width < 600px) {
+    min-height: var(--mobile-sidebar-height);
+  }
+  @media (width >= 600px) and (width < 1000px) {
+    min-height: var(--tablet-sidebar-height);
+  }
+  @media (width >= 1000px) and (width <= 2560px) {
+    min-height: var(--desktop-sidebar-height);
+  }
+  padding: 10px;
+}
+
+aside ul{
+  margin-left: 10px;
+  padding:5px;
+}
+
+article{
+  grid-area: ads;
+  display: flex;
+  flex-direction: row;
+  @media (width >= 320px) and (width < 600px) {
+    min-height: var(--mobile-ads-height);
+  }
+  @media (width >= 600px) and (width < 1000px) {
+    min-height: var(--tablet-ads-height);
+  }
+  @media (width >= 1000px) and (width <= 2560px) {
+    min-height: var(--desktop-ads-height);
+    flex-direction: column;
+  }
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+article .ads{
+  background-color: darkred;
+  color: white;
+  font-style: italic;
+  border-radius: 5px;
+  width: 80%;
+  height: 80%;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+
+footer{
+  grid-area: footer;
+  min-height: var(--footer-height);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.directions{
+  @media (width >= 320px) and (width < 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  max-width: 540px;
+  width: 90%;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: 100px;
+  gap: 10px;
+}
+
+.scope{
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all .3s;
+}
+
+.scope:hover{
+  background-color: lightgreen;
+}

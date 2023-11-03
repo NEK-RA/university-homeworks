@@ -1,0 +1,14 @@
+@import url("task2.css");
+@import url("task3.css");
+@import url("task4.css");
+
+body{
+  background-color: rgb(0, 0, 32);
+  color: white;
+  overflow-x: hidden;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+header h1{
+  text-align: center;
+}

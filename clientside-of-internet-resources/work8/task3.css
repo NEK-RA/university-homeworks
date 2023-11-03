@@ -1,0 +1,94 @@
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  color: white;
+}
+
+form > h2{
+  text-align: center;
+  font-size: 1.6em;
+}
+
+.grid{
+  display: grid;
+  padding: 1.0em;
+  @media (width < 713px) {
+    grid-template-columns: 1fr;
+  }
+  @media (width >= 713px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  gap: 2em;
+  color: white;
+}
+
+.custom-placeholder{
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+input, textarea{
+  position: relative;
+  width: 100%;
+  outline: none;
+  border-radius: 3px;
+  border: none;
+  box-sizing: border-box;
+  font-size: 1.4em;
+  padding: 0.2em 0.3em;
+  background-color: transparent;
+  color: white;
+  border-bottom: 3px solid aqua;
+  transition: all .5s;
+  z-index: 2;
+}
+
+textarea{
+  font-size: 1.4em;
+  resize: vertical;
+  height: 100px;
+}
+
+.custom-placeholder:has(> textarea){
+  grid-column: span 1;
+  @media (width >= 713px) {
+    grid-column: span 2;
+  }
+}
+
+input:focus, textarea:focus{
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+.input-placeholder
+{
+  position: absolute;
+  top: -1.2em;
+  left: 0em;
+  font-size: 1.4em;
+  transition: all .5s;
+  z-index: 1;
+}
+
+input:placeholder-shown + .input-placeholder,
+textarea:placeholder-shown + .input-placeholder{
+  transform: translate(0.5em, 1.4em);
+}
+
+input:invalid{
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+button{
+  padding: 10px;
+  margin: 0px 30%;
+  border-radius: 5px;
+}

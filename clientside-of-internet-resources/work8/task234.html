@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Современные средства веб-разработки</title>
+  <link rel="stylesheet" href="./task234.css">
+  <script src="/trailing-slash.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Современные средства веб-разработки</h1>
+  </header>
+  <main>
+    <section class="content">
+      <div class="span1row2col">
+        <img src="https://vuejs.org/logo.svg" alt="VueJS logo">
+        <p>
+          Vue.js - это прогрессивный JavaScript-фреймворк для создания пользовательских интерфейсов. Он позволяет разработчикам создавать мощные одностраничные приложения (SPA) и компоненты интерфейса, которые могут быть повторно использованы в разных проектах.
+        </p>
+      </div>
+  
+      <div class="span2row1col">
+        <img src="https://react.dev/favicon.ico" alt="react logo">
+        <p>
+          React - это JavaScript-библиотека для создания пользовательских интерфейсов. Она позволяет разработчикам создавать компоненты интерфейса, которые могут быть повторно использованы и эффективно управлять состоянием приложения.
+        </p>
+      </div>
+  
+      <div class="span1row1col">
+        <img src="https://eslint.org/icon.svg" alt="ESLint logo">
+        <p>
+          ESLint - это инструмент для статического анализа кода JavaScript.
+        </p>
+      </div>
+  
+      <div class="span2row1col">
+        <img src="https://svelte.dev/_app/immutable/assets/svelte-logo.5c5d7d20.svg" alt="Svelte logo">
+        <p>
+          Svelte - это компилируемый компонентный фреймворк для создания пользовательских интерфейсов. Он позволяет разработчикам писать декларативный код и компилирует его в оптимизированный JavaScript-код.
+        </p>
+      </div>
+  
+      <div class="span1row1col">
+        <img src="https://vitejs.dev/logo-with-shadow.png" alt="Vite logo">
+        <p>Vite - это инструмент для разработки веб-приложений, оптимизированный для быстрой загрузки и разработки на основе модулей.</p>
+      </div>
+  
+      <div class="span1row3col">
+        <img src="https://webpack.js.org/site-logo.c0e60df418e04f58.svg" alt="Webpack logo">
+        <p>
+          Webpack - это инструмент для сборки JavaScript-приложений. Он позволяет разработчикам объединять и управлять зависимостями в проекте, а также оптимизировать и упаковывать код для более эффективной загрузки в браузере.
+        </p>
+      </div>
+
+      <div class="span1row1col">
+        <img src="https://prettier.io/icon.png" alt="Prettier logo">
+        <p>
+          Prettier - это инструмент для автоматического форматирования кода в соответствии с заданными стандартами форматирования.
+        </p>
+      </div>
+    </section>
+    <section>
+      <form action="">
+        <h2>Grid-форма "для отзывов"</h2>
+        <div class="grid">
+          <span class="custom-placeholder">
+            <input type="text" placeholder=" ">
+            <span class="input-placeholder">
+              Имя
+            </span>
+          </span>
+    
+          <span class="custom-placeholder">
+            <input type="email" placeholder=" " required>
+            <span class="input-placeholder">
+              Почта (для ответов)
+            </span>
+          </span>
+    
+          <span class="custom-placeholder">
+            <input type="tel" placeholder=" " pattern="(\+7|8)[0-9]{10}" required>
+            <span class="input-placeholder">
+              Телефон (+7 или 8)
+            </span>
+          </span>
+    
+          <span class="custom-placeholder">
+            <input type="text" placeholder=" " pattern=".{5,}">
+            <span class="input-placeholder">
+              Заголовок
+            </span>
+          </span>
+    
+          <span class="custom-placeholder">
+            <textarea placeholder=" "></textarea>
+            <span class="input-placeholder">
+              Комментарий
+            </span>
+          </span>
+
+          <span></span>
+          <button>Отправить</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="about">
+        <h3>О странице</h3>
+        <p>
+          Страница разработана в учебных целях, в рамках 8-й практической работы по дисциплине "Разработка клиентских частей интернет-ресурсов".
+        </p>
+        <p>
+          Цель работы - освоение работы с Grid Layout в CSS в контексте адаптивного дизайна
+        </p>
+      </div>
+
+      <div class="tech-used">
+        <h3>Использованные технологии</h3>
+        <ul>
+          <li>
+            HTML5
+            <ul>
+              <li>Semnatic blocks</li>
+              <li>Forms</li>
+            </ul>
+          </li>
+          <li>
+            CSS3
+            <ul>
+              <li>Grid layout</li>
+              <li>Flex layout</li>
+              <li>CSS Media queries</li>
+              <li>Pseudo-classes</li>
+              <li>Pseudo-elements</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="works-links">
+        <h3>Ссылки на работы</h3>
+        <ul>
+          <li>
+            <a href="https://github.com/NEK-RA/university-homeworks/tree/main/clientside-of-internet-resources" target="_blank">Репозиторий в Github</a>
+          </li>
+          <li>
+            <a href="https://nek-csoir.vercel.app/" target="_blank">Превью на хостинге</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contacts">
+        <h3>Контактная информация</h3>
+        <p>
+          <strong>Телефон:</strong> +7 (000) 000-00-00
+        </p>
+        <address>
+          <strong>Адрес:</strong> не указан из очевидных соображений
+        </address>
+      </div>
+    </div>
+
+    <div class="cr-info">NEK @ 2023</div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+.content{
+  display: grid;
+  @media (width > 1000px){
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (width > 600px) and (width <= 1000px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (width <= 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  grid-template-rows: repeat(3, 200px);
+  grid-auto-rows: 220px;
+  grid-auto-flow: row dense;
+  padding: 1em;
+  gap: 5px;
+  border-radius: 5px;
+}
+
+/*
+Grid template from task:
+
+  A A B C
+  D E B F
+  D G G G
+*/
+
+.content > *{
+  background-color: rgb(37, 37, 37);
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  transition: all .5s;
+}
+
+.span1row2col{
+  grid-row: span 1;
+  grid-column: span 2;
+}
+
+.span2row1col{
+  grid-row: span 2;
+  grid-column: span 1;
+}
+
+.span1row1col{
+  grid-row: span 1;
+  grid-column: span 1;
+}
+
+.span1row3col{
+  grid-row: span 1;
+  @media (width > 600px) {
+    grid-column: span 3;
+  }
+  @media (width <= 600px) {
+    grid-column: span 2;
+  }
+}
+
+.content > *:hover{
+  background-color: darkblue;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px 5px lightblue;
+  z-index: 2;
+}
+
+.content p{
+  text-align: center;
+}
+
+.content p::selection{
+  background-color: lightblue;
+  color: darkblue;
+}
+
+.content img{
+  max-width: 30%;
+  max-height: 30%;
+  min-width: 48px;
+  min-height: 48px;
+}
