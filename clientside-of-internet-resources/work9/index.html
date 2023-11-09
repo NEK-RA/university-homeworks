@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS HW 1</title>
+  <script src="../trailing-slash.js"></script>
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h2>Javascript HW 1</h2>
+    <div class="likebox" onclick="switchlike()">
+      <div class="like material-icons">favorite_border</div>
+      <div class="like-counter"> 0 </div>
+    </div>
+    <div class="user-login" onclick="showUserLogin()">
+      Вход/Регистрация
+    </div>
+    <div class="admin-login" onclick="adminLogin()">
+      Админка
+    </div>
+    <div class="ulogin-form">
+      <fieldset>
+        <legend>Логин</legend>
+        <input type="text" name="login" placeholder="Логин" id="userLogin">
+        <input type="password" name="pass" placeholder="Пароль" id="userPass">
+        <button onclick="loginIfExist()">Вход</button>
+      </fieldset>
+    </div>
+  </header>
+  <main onclick="draw()">
+  </main>
+  <div class="hint" onclick="clearLayout()">
+    click to clear
+  </div>
+  <div class="layout"></div>
+</body>
+</html>
+
+<!-- 
+
+  Создайте страницу входа в панель управления сайтом (или используйте уже созданную форму для входа на сайт). 
+Используя  конструкцию  if...else,  напишите  код,  который  будет  спрашивать: «Желаете пройти регистрацию на сайте?». Если пользователь вводит «Да», то показать: «Круто!», в любом другом случае – отобразить: «Попробуй ещё раз». 
+ 
+2. Напишите код, который будет спрашивать логин с помощью prompt. Если посетитель вводит «Админ», то prompt запрашивает пароль, если ничего не введено или нажата клавиша Esc  –  показать  «Отменено», в противном случае отобразить  «Я вас не знаю» (можно использовать свои формулировки). 
+Пароль нужно проверить следующим образом: 
+ Если введён пароль «Я главный», то выводить «Здравствуйте!», 
+ Иначе – «Неверный пароль», 
+ При отмене – «Отменено». 
+Используйте вложенные блоки if. Обращайте внимание на стиль и читаемость кода. Передача  пустого  ввода  в  приглашение  prompt  возвращает  пустую  строку.  Нажатие клавиши Esc во время запроса возвращает null.  
+
+3. Создайте кнопку «Нравится», которая будет менять цвет при нажатии на неё, а при повторном нажатии возвращаться к своему цвету.      
+
+4. Дополнительно к этой кнопке (или к новой) добавьте возможность создавать элементы следуя за курсором, при повторном нажатии «рисование» прекращается.
+
+ -->

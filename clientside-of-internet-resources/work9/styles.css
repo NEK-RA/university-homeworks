@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+header{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px 20px;
+  height: 50px;
+  gap: 5px;
+  background-color: darkblue;
+  color: white;
+  font-family: monospace;
+  --likebox-bg-untouched: lightblue;
+  --likebox-bg-touched: lightpink;
+  --likebox-text-untouched: rgb(94, 170, 196);
+  --likebox-text-touched: red;
+}
+
+h2{
+  position: absolute;
+  left: 20px;
+}
+
+.likebox{
+  background-color: var(--likebox-bg-untouched);
+  color: var(--likebox-text-untouched);
+  padding: 0px 15px;
+  border-radius: 50px;
+  height: 3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.like{
+  background-color: transparent;
+  color: rgb(94, 170, 196);
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  transition: all .3s;
+}
+
+.likebox-active{
+  background-color: var(--likebox-bg-touched);
+  color: var(--likebox-text-touched);
+}
+
+.like-active{
+  background-color: red;
+  color: white;
+}
+
+.like-counter{
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.admin-login{
+  background-color: black;
+  font-size: 1.5em;
+  padding: 10px;
+  border-radius: 10px;
+  justify-self: flex-end;
+  cursor: pointer;
+  user-select: none;
+}
+
+.user-login{
+  background-color: blue;
+  font-size: 1.5em;
+  padding: 10px;
+  border-radius: 10px;
+  justify-self: flex-end;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ulogin-form{
+  position: fixed;
+  right: 10px;
+  top: 60px;
+  width: 300px;
+  display: none;
+  background-color: rgba(0, 0, 139, 0.568);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 10px;
+  cursor: auto;
+  opacity: 0;
+  border-radius: 5px;
+  transition: all .5s;
+  font-size: 1.4em;
+}
+
+fieldset{
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 5px;
+}
+
+input{
+  font-size: 1em;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  padding: 5px 10px;
+}
+
+button{
+  padding: 10px 20px;
+}
+
+main{
+  position: relative;
+  z-index: 1;
+  top: 50px;
+  height: calc(100vh - 50px);
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  user-select: none;
+}
+
+.hint{
+  position: absolute;
+  top: 50px;
+  width: 150px;
+  margin: 0px auto;
+  z-index: 2;
+  background-color: rgba(169, 169, 169, 0.562);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  > button{
+    padding: 3px;
+    border-radius: 20px;
+    border: none;
+  }
+}
+
+.layout{
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  z-index: -1;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
