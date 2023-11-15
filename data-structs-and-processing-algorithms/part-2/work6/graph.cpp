@@ -1,6 +1,4 @@
 #include "graph.h"
-#include <limits>
-#include <sstream>
 
 Graph::Graph(){
     cout << "Граф создан." << endl;
@@ -12,7 +10,6 @@ Graph::~Graph(){
     if(this->nodes.size() > 0){
         while(this->nodes.size() > 0){
             nd = this->nodes.front();
-
             if(nd->paths.size() > 0){
                 while(nd->paths.size() > 0){
                     pt = nd->paths.front();
@@ -20,7 +17,6 @@ Graph::~Graph(){
                     nd->paths.pop_front();
                 }
             }
-
             delete nd;
             this->nodes.pop_front();
         }
@@ -59,6 +55,10 @@ bool Graph::addPath(string from, string to, int cost){
         }
         if(src != nullptr && this->exists(to)){
             src->paths.push_back(new Graph::Path({to, cost}));
+            // вставка + сортировка, чтобы сначала в списке была вершина с наименьшей дистанцией
+            src->paths.sort([](const Graph::Path *a, Graph::Path *b){
+                return a->distance < b->distance;
+            });
             return true;
         }
     }
@@ -93,8 +93,9 @@ void Graph::resetTotal(){
     }
 }
 
+// Скорректировано с использованием https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-using-set-in-stl/
 void Graph::shortPath(string from, string to){
-    cout << "Проверка наличия вершины " << from;
+        cout << "Проверка наличия вершины " << from;
     bool from_ex = this->exists(from);
     bool to_ex = this->exists(to);
     if(!from_ex){
@@ -111,38 +112,31 @@ void Graph::shortPath(string from, string to){
         return;
     }
     cout << endl;
-    // начало алгоритма дейкстры
-    queue<Graph::Node*> calc;
+    set<Graph::Node*> in_process;
     Graph::Node* current = this->getNode(from);
     Graph::Node* next = nullptr;
     current->total = 0;
-    calc.push(current);
-    float cway = 0;
-    // анализ вершин
-    while(!calc.empty()){
-        current = calc.front();
-        // cout << "Анализируется вершина " << current->name << endl;
-        for(Graph::Path* pt: current->paths){
+    in_process.insert(current);
+    while(!in_process.empty()){
+        current = *(in_process.begin());
+        in_process.erase(in_process.begin());
+        // Ребра отсортированы по весу еще при добавлении
+        for(Graph::Path* pt : current->paths){
             next = this->getNode(pt->target);
-            // пропускаем путь от анализируемой вершины до текущей
-            if(current->total - pt->distance == next->total){
-                continue;
-            }
-            // анализируем остальные пути
-            cway = current->total + pt->distance;
-            // если найден более короткий путь до вершины, или она еще не посещена (расстояние infinity)
-            if(next->total > cway){
-                next->total = cway;
-                // анализ вершины завершен, добавляем ее в очередь
+            // если путь к вершине через ребро меньше, чем указанный путь у вершины
+            // значит найден более оптимальный путь к ней и надо обновить значение
+            if(next->total > current->total + pt->distance){
+                if(next->total != numeric_limits<float>::infinity()){
+                    in_process.erase(
+                        in_process.find(next)
+                    );
+                }
+                next->total = current->total + pt->distance;
                 next->previous = current;
-                calc.push(next);
-                // cout << "Добавили в очередь вершину " << next->name << endl;
+                in_process.insert(next);
             }
         }
-        calc.pop();
     }
-    // все вершины проанализированы
-    // конец алгоритма дейкстры
 
     current = this->getNode(to);
     cout << "Кратчайший путь составляет " << current->total << " и проходит через следующие вершины:" << endl;

@@ -57,6 +57,38 @@ Graph* test9(){
 
     g->addBidirectionalPath("D", "R", 32);
     g->addBidirectionalPath("D","M", 21);
+    // Shortest L->D: L -> B -> G -> S -> D
+    return g;
+}
+
+Graph* test8(){
+    Graph* g = new Graph();
+    g->addNode("One");
+    g->addNode("Two");
+    g->addNode("Three");
+    g->addNode("Four");
+    g->addNode("Five");
+    g->addNode("Six");
+    g->addNode("Seven");
+
+    g->addPath("One", "Two", 4);
+    g->addPath("One", "Three", 1);
+
+    g->addPath("Two", "Three", 1);
+    g->addPath("Two", "Four", 3);
+    g->addPath("Two", "Five", 2);
+
+    g->addPath("Three", "Six", 2);
+
+    g->addPath("Four", "Six", 1);
+    g->addPath("Four", "Seven", 3);
+
+    g->addPath("Five", "Seven", 2);
+
+    g->addPath("Six", "Seven", 1);
+
+    // Shortest path 1->6: 1->3->6
+    // Shortest path 1->7: 1->3->6->7
 
     return g;
 }
@@ -75,6 +107,7 @@ int main(){
         "6. Отобразить список вершин\n"
         "7. Определить степень вершины графа\n"
         "8. Найти кратчайший путь между вершинами (метод Дейкстры)\n"
+        "9. Тестовый граф №8\n"
         "0. Выход\n"
         "Выбор: ";
     while(choice != 0){
@@ -151,7 +184,15 @@ int main(){
                 cin >> name;
                 names.push_back(name);
                 g->shortPath(names[0], names[1]);
+            }else{
+                cout << "Граф еще не создан, нет исходных данных для поиска пути" << endl;
             }
+            break;
+        case 9:
+            if(g != nullptr){
+                delete g;
+            }
+            g = test8();
             break;
         default:
             cout << "Выход..." << endl;
