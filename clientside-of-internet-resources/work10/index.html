@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 10</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="index.js"></script>
+</head>
+<body>
+  <main>
+    <section>
+      <form>
+        <fieldset>
+          <legend><h2>Captcha</h2></legend>
+          <p id="captcha-hint">
+            Пожалуйста, решите капчу:
+          </p>
+          <p id="captcha-task">
+            загрузка...
+          </p>
+          <input type="text" name="" id="captcha-input" disabled>
+          <button onclick="changeCaptcha()">Заменить капчу</button>
+          <br>
+          <button disabled id="captcha-protected">Кнопка заработает, когда будет решена капча</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section>
+      <h2>Cart</h2>
+      <div class="flex-row">
+        <button onclick="addToCart('яблоки')">Яблоки</button>
+        <button onclick="addToCart('апельсины')">Апельсины</button>
+        <button onclick="addToCart('мандарины')">Мандарины</button>
+        <button onclick="addToCart('груши')">Груши</button>
+        <button onclick="alertCart()">Узнать содержимое</button>
+        <button onclick="clearCart()">Очистить корзину</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Truncate cards text</h2>
+
+      <div class="flex-row">
+        <div class="simple-card">
+          <h3>Some card text here</h3>
+          <p class="truncated-text"></p>
+          <p class="card-text">Lorem ipsum dolor sit amet</p>
+        </div>
+  
+        <div class="simple-card">
+          <h3>Some card text here</h3>
+          <p class="truncated-text"></p>
+          <p class="card-text">Lorem ipsum dolor sit amet</p>
+        </div>
+        
+        <div class="simple-card">
+          <h3>Some card text here</h3>
+          <p class="truncated-text"></p>
+          <p class="card-text">Lorem ipsum dolor sit amet</p>
+        </div>
+
+        <button onclick="truncateCards()">Truncate cards text</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
