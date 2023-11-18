@@ -142,14 +142,6 @@ function truncateCards(){
 ///////////////////////////////////////////////////////////////////////////
 
 window.onload = function(){
-  // для vercel
-  if(
-    !location.pathname.endsWith(".html")
-    && !location.pathname.endsWith("/")
-  ){
-    location.pathname += "/"
-  }
-  // по работе
   let captchaText = document.querySelector("#captcha-task");
   let captchaInput = document.querySelector("#captcha-input");
   if(!captchaText || !captchaInput){
