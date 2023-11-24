@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays - Cart Simulation</title>
+  <script src="../trailing-slash.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="index.js"></script>
+</head>
+<body>
+  <header>
+    Cимулятор корзины товаров
+  </header>
+  <main>
+
+    <section id="filters">
+      <fieldset>
+        <legend>Фильтры</legend>
+        Цена: не меньше <input type="number" id="filter-lower"> и не больше чем <input type="number" name="" id="filter-higher">
+        <br>
+        Сортировка: <button onclick="switchSort()" id="sortBtn">Нет</button>
+        <br>
+        <button onclick="showCurrentThree()">Применить</button>
+      </fieldset>
+    </section>
+
+    <section class="items-carousel-container">
+      <button class="prev">&lt;</button>
+      <div class="items-carousel">
+      
+      </div>
+      <button class="next">&gt;</button>
+    </section>
+    
+    <section id="cart-container">
+      <h2>Корзина</h2>
+
+    </section>
+  </main>
+</body>
+</html>

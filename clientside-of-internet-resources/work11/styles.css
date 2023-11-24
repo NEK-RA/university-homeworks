@@ -1,0 +1,137 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+header{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(22, 22, 22);
+  color: wheat;
+  height: 3em;
+  font-family: monospace;
+  font-size: 2em;
+  box-shadow: 0px 0px 10px 5px wheat;
+  z-index: 2;
+}
+
+main{
+  position: relative;
+  height: calc(100vh - 8em);
+  background-color: rgb(31, 31, 31);
+  z-index: 1;
+  padding-top: 50px;
+  overflow-y: scroll;
+}
+
+#filters{
+  margin-bottom: 20px;
+  background-color: coral;
+  padding: 10px;
+  >fieldset{
+    padding: 15px;
+  }
+}
+
+.items-carousel-container{
+  position: relative;
+  background-color: wheat;
+  box-shadow: 0px 0px 5px 10px wheat;
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around; 
+  box-sizing: border-box;
+}
+
+.prev, .next{
+  font-size: 2em;
+  padding: 10px;
+  position: absolute;
+  top: 120px;
+}
+
+.prev{
+  left: 0px;
+}
+
+.next{
+  right: 0px;
+}
+
+.items-carousel{
+  padding: 20px;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center; 
+  gap: 3px;
+}
+
+.card{
+  position: relative;
+  height: 260px;
+  width: 200px;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: coral;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 5px;
+  >.card-img-placeholder{
+    height: 50%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.548);
+    border-radius: 5px;
+  }
+  >button{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+  }
+}
+
+#cart-container{
+  background-color: coral;
+  width: 80%;
+  box-sizing: border-box;
+  margin: 20px auto;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item{
+  background-color: wheat;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  > div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    font-size: 1.5em;
+    > button{
+      display: block;
+      width: 2em;
+      height: 2em;
+    }
+  }
+}
