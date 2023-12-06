@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../trailing-slash.js"></script>
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="top-notifications">
+  </section>
+
+
+  <article class="float-notification">
+    <span class="notify-counter">0</span>
+    <div class="notify-header" onclick="showHideFN()">
+      <div class="material-icons">notifications</div>
+    </div>
+    <div class="scrollable-list">
+      <div class="notify-items">
+      </div>
+    </div>
+  </article>
+
+
+  <!-- <div class="console"></div> -->
+  <button onclick="makeNotification()">Добавить уведомление наверху страницы</button>
+  <button onclick="makeList()">Добавить элементы в список</button>
+  <button onclick="clearList()">Очистить список</button>
+  <ul id="userlist"></ul>
+</body>
+</html>
+
+<!-- 
+
+1. В  элементе  уведомлений,  созданном  ранее,  добавьте  появление  новых уведомлений  каждые  3  секунды  (счетчик  новых  уведомлений  должен обновляться, содержание элемента на ваше усмотрение). 
+
+2. При нажатии на кнопку  уведомлений, с использованием задерживающего декоратора, остановите счетчик новых уведомлений на 10 секунд. 
+
+3. Напишите интерфейс для создания списка. Для каждого пункта: 
+    1. Запрашивайте содержимое пункта у пользователя с помощью prompt. 
+    2. Создавайте элемент <li> и добавляйте его к <ul>.
+    3. Продолжайте  до  тех  пор,  пока  пользователь  не  отменит  ввод (нажатием клавиши Esc или введя пустую строку). 
+    4. Все элементы должны создаваться динамически. 
+    5.  Если пользователь вводит HTML-теги, они должны обрабатываться как текст. 
+
+4. Напишите функцию showNotification(options), которая создаёт уведомление: <div class="notification">  с  заданным  содержимым. Уведомление должно автоматически исчезнуть через 1,5 секунды.  
+
+ -->
