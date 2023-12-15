@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("float-notification.css");
+
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+body{
+  background-color: black;
+  color: white;
+}
+
+p{
+  padding: 10px 50px;
+}
+
+.imgbox{
+  width: 50vw;
+  height: 50vh;
+  border: 1px solid red;
+}
+
+.paralax{
+  position: absolute;
+  
+}
+
+#paralax1{
+  top: 400px;
+  left: 10px;
+}
+
+#paralax2{
+  top: 50px;
+  right: 10px;
+}
