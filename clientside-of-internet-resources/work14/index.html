@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../trailing-slash.js"></script>
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section>
+    <h1>Блок с id="contents"</h1>
+    <div id="contents">
+      <a href="#">просто ссылка</a>
+      <ul>
+        <li>
+          <a href="#" target="_blank">ссылка внутри списка с аттрибутом target=_blank</a>
+        </li>
+        
+        <li>
+          <a href="#">
+            <span>
+              <strong>
+                <q>Ссылка содержащая span  > strong > q > текст</q>
+              </strong>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="progress-bar"></div>
+  </section>
+
+  <section>
+    <h1>Галерея</h1>
+    <div id="viewbox">
+      <img class="viewimg" src="" alt="">
+    </div>
+    <div class="thumbnails">
+      <img src="img/eclipse-window-min.png" alt="">
+      <img src="img/idea-window-new-min.png" alt="">
+      <img src="img/netbeans-window-min.png" alt="">
+      <img src="img/vscode-window-min.png" alt="">
+      <img src="img/java-mascot-min.png" alt="">
+    </div>
+  </section>
+
+  <section class="selection-zone">
+    <figure class="selectable">
+      <img src="img/eclipse-logo-min.png" alt="" class="square">
+      <figcaption>Eclipse</figcaption>
+    </figure>
+    <figure class="selectable">
+      <img src="img/vscode-logo-min.png" alt="" class="square">
+      <figcaption>VS Code</figcaption>
+    </figure>
+    <figure class="selectable">
+      <img src="img/netbeans-logo-min.png" alt="" class="square">
+      <figcaption>Netbeans</figcaption>
+    </figure>    
+  </section>
+
+  <section>
+    <div class="slider-bar">
+      <div class="slider-runner"></div>
+    </div>
+  </section>
+
+  <section id="cart-demo">
+    <div class="store">
+      <div class="product">
+        <span>Jetbrains License Pack (1 year)</span>
+        <span>$599.00</span>
+      </div>
+      <div class="product">
+        <span>Visual Studio Enterprise (1 month)</span>
+        <span>$250.00</span>
+      </div>
+      <div class="product">
+        <span>Test item</span>
+        <span>$150.99</span>
+      </div>
+    </div>
+
+    <div class="cart">
+      <div class="dropzone">
+
+      </div>
+      <div class="total">
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+<!-- 
+
+  +  1. Сделайте  так,  чтобы  при  клике на  ссылки  внутри  элемента id="contents"  пользователю  выводился  вопрос  о  том,  действительно  ли  он хочет покинуть страницу, и если он не хочет, то прерывать переход по ссылке. (Содержимое #contents может быть загружено динамически и присвоено при помощи innerHTML. Так что найти все ссылки и поставить на них обработчики нельзя.  Используйте  делегирование.  Содержимое  может  иметь  вложенные теги, в том числе внутри ссылок, например, <a href=".."><i>...</i></a>.) 
+
+  +  2. Создайте галерею изображений, в которой основное изображение изменяется при клике на уменьшенный вариант.  
+
+  +  3. Создайте список, в котором элементы могут быть выделены, как в файловых менеджерах. При клике на элемент списка выделяется только этот элемент  (добавляется  класс  .selected),  отменяется  выделение  остальных элементов.  Если  клик  сделан  вместе  с  Ctrl  (Cmd  для  Mac),  то  выделение переключается на элементе, но остальные элементы при этом не изменяются. (Предотвратите стандартное для браузера выделение текста при кликах.) 
+
+  +  4. Создайте слайдер:  Слайдер должен нормально работать при резком движении мыши влево или вправо за пределы полосы. При этом бегунок должен останавливаться чётко в нужном конце полосы. При нажатом бегунке мышь может выходить за пределы полосы слайдера, но слайдер пусть всё равно работает (это удобно для пользователя). 
+
+  +  5. Добавьте  возможность  перетаскивать  элементы  (товары)  в «корзину» сайта. При этом итоговая стоимость корзины должна изменяться в соответствии с ценой товара и количеством перенесенных элементов. 
+
+  6. Создайте  любую  анимацию  для  сайта  используя  JavaScript. Разместите  от  двух  различных  по  действиям  анимаций  так,  чтобы  это  не мешало пользователю и аутентично смотрелось на сайте.
+
+ -->
