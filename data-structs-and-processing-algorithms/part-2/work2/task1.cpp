@@ -26,6 +26,7 @@ void mkFixedOrRandom(string filename, bool fixedNumbers = true){
     file.open(filename, ios::out);
   }
   int randomN;
+  srand(0);
   if(file.is_open()){
     for(int i = 0; i < ((rand() % 50) + 10); i++){
       if(fixedNumbers){
@@ -36,10 +37,18 @@ void mkFixedOrRandom(string filename, bool fixedNumbers = true){
         file << to_string(randomN);
       }
       
-      if(i % ((rand() % 10)+2) == 4){
-        file << endl;
+      if (fixedNumbers){
+          if(i % 5 == 4){
+              file << endl;
+          }else{
+              file << " ";
+          }
       }else{
-        file << " ";
+        if(i % ((rand() % 10)+2) == 4){
+          file << endl;
+        }else{
+          file << " ";
+        }
       }
     }
     file.close();
@@ -146,9 +155,11 @@ double averageNegative(string filename){
   }else{
     cout << "Не удалось открыть для чтения файл " << filename << endl;
   }
-  num = sum/counter;
-  cout << "Среднее арифметическое отрицательных чисел: " << num << endl;
-  return num;
+  if(counter != 0){
+    sum = sum/counter;
+  }
+  cout << "Среднее арифметическое отрицательных чисел: " << sum << endl;
+  return sum;
 }
 
 string variantSpecific(string filename){
@@ -242,14 +253,14 @@ void task1(){
         break;
       
       case 2:
-        cout << "Будет создан файл из 100 чисел от 0 до 99, по 5 через пробел чисел на строке" << endl;
+        cout << "Будет создан файл, содержащий от 10 до 60 положительных чисел со значением равным порядковому номеру числа, по 5 через пробел чисел на строке" << endl;
         cout << "Укажите имя файла: ";
         cin >> filename;
         mkFixedOrRandom(filename);
         break;
       
       case 3:
-        cout << "Будет создан файл из 100 случайных чисел, по 5 через пробел чисел на строке" << endl;
+        cout << "Будет создан файл содержащий от 10 до 60 случайных чисел в диапазоне [-1000; 1000]" << endl;
         cout << "Укажите имя файла: ";
         cin >> filename;
         mkFixedOrRandom(filename, false);
