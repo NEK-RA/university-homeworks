@@ -77,7 +77,6 @@ vector<string> makePostfix(string e){
 }
 
 Node* makeTree(vector<string> postfix){
-    //1+2+3*4-5/6   -->  1 2 + 3 4 * + 5 6 / -
     stack<Node*> nodes;
     int p;
     char c;
@@ -100,27 +99,23 @@ Node* makeTree(vector<string> postfix){
                 nodes.pop();
                 left = nodes.top();
                 nodes.pop();
-                if(left->getValue() != '0' && right->getValue() != '0'){
+                if(left->getValue() != 0 && right->getValue() != 0){
                     opnode = new Node(postfix[i][0], left, right);
+                    nodes.push(opnode);
                 }else{
-                    switch(c){
-                    case '+':
-                        opnode = new Node(left->getValue() + right->getValue());
-                        break;
-                    case '-':
-                        opnode = new Node(left->getValue() - right->getValue());
-                        break;
-                    case '*':
-                        opnode = new Node(left->getValue() * right->getValue());
-                        break;
-                    case '/':
-                        opnode = nullptr;
-                        break;
-                    default:
-                        continue;
+                    opnode = new Node(postfix[i][0], left, right);
+                    if(opnode->computeValue() == (1 / 0.0)){
+                        cout << "ОШИБКА: В выражении есть деление на 0!" << endl;
+                        return nullptr;
+                    }
+                    if(opnode->computeValue() != 0){
+                        if(c == '+'){
+                            nodes.push(new Node(opnode->left->data + opnode->right->data));
+                        }else{
+                            nodes.push(new Node(opnode->left->data - opnode->right->data));
+                        }
                     }
                 }
-                nodes.push(opnode);
             }
             break;
         default:
@@ -135,7 +130,7 @@ int main(){
     vector<string> exps{
         "5", "1+2", "1+2+3*4-5/6"
     };
-    vector<string> test = makePostfix(exps[2]); // 1 2 + 3 4 * + 5 6 / -
+    vector<string> postfix;
     string expr = "";
     int choice = -1;
     float result = 0;
@@ -157,7 +152,16 @@ int main(){
         case 1:
             for(int i = 0; i < exps.size(); i++){
                 cout << i+1 << ") " << exps[i] << endl;
-                root = makeTree(makePostfix(exps[i]));
+                if(root != nullptr){
+                    delete root;
+                }
+                postfix = makePostfix(exps[i]);
+                cout << "Выражение в постфиксной форме: ";
+                for(string s: postfix){
+                    cout << s << " ";
+                }
+                cout << endl;
+                root = makeTree(postfix);
                 root->print();
                 cout << "Значение в левом поддереве: ";
                 if(root->left != nullptr){
@@ -173,16 +177,29 @@ int main(){
                     cout << 0;
                 }
                 cout << endl;
-                cout << "Значение выражения: " << root->computeValue() << endl;
+                cout << "Значение выражения: " << root->computeValue() << endl << endl;
             }
             break;
         case 2:
-            cout << "Поддерживаемые операции: +, -, *, /.\nВведите выражение:";
+            cout << "Поддерживаемые операции: +, -, *, /.\nВведите выражение: ";
             getline(cin, expr);
             if(expr.size() != 0){
-                root = makeTree(makePostfix(expr));
-                cout << "Дерево было построено:" << endl;
-                root->print();
+                if(root != nullptr){
+                    delete root;
+                }
+                postfix = makePostfix(expr);
+                cout << "Выражение в постфиксной форме: ";
+                for(string s: postfix){
+                    cout << s << " ";
+                }
+                cout << endl;
+                root = makeTree(postfix);
+                if(root != nullptr){
+                    cout << "Дерево было построено:" << endl;
+                    root->print();
+                }else{
+                    cout << "Не удалось построить дерево по причине наличия ошибок в выражении" << endl;
+                }
             }else{
                 cout << "Выражение еще не задано!" << endl;
             }

@@ -1,9 +1,9 @@
 #include "node.h"
 
 Node::Node(char op, Node* left, Node* right){
-            this->left = left;
-            this->right = right;
-            this->data = op;
+    this->left = left;
+    this->right = right;
+    this->data = op;
 }
 
 Node::Node(int num){
