@@ -62,7 +62,7 @@ bool Graph::addPath(string from, string to, int cost){
             return true;
         }
     }
-    cout << "Одна или обе из указанных вершин не найдены, путь не был добавлен в граф" << endl;
+    cout << "Одна или обе из указанных вершин не найдены, ребро не было добавлено в граф" << endl;
     return false;
 }
 
@@ -113,6 +113,7 @@ void Graph::shortPath(string from, string to){
     }
     cout << endl;
     set<Graph::Node*> in_process;
+    set<Graph::Node*>::iterator index;
     Graph::Node* current = this->getNode(from);
     Graph::Node* next = nullptr;
     current->total = 0;
@@ -127,9 +128,10 @@ void Graph::shortPath(string from, string to){
             // значит найден более оптимальный путь к ней и надо обновить значение
             if(next->total > current->total + pt->distance){
                 if(next->total != numeric_limits<float>::infinity()){
-                    in_process.erase(
-                        in_process.find(next)
-                    );
+                    index = in_process.find(next);
+                    if(index != in_process.end()){
+                        in_process.erase(index);
+                    }
                 }
                 next->total = current->total + pt->distance;
                 next->previous = current;
@@ -174,5 +176,5 @@ void Graph::printNodes(){
             cout << endl;
         }       
     }
-    cout << "Всего: " << this->nodes.size() << " вершин и " << (totalPaths / 2) << " путей" << endl;
+    cout << "Всего: " << this->nodes.size() << " вершин и " << totalPaths << " ребер" << endl;
 }

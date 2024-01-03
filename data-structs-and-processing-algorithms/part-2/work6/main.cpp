@@ -89,7 +89,6 @@ Graph* test8(){
 
     // Shortest path 1->6: 1->3->6
     // Shortest path 1->7: 1->3->6->7
-
     return g;
 }
 
@@ -98,16 +97,16 @@ int main(){
     vector<string> names;
     int choice = -1;
     string name = "";
-    string menu = "\tРабота со взешенным неориентированным графом\n"
-        "1. Подготовить тестовый граф 1\n"
-        "2. Подготовить тестовый граф 9\n"
-        "3. (Пере)Создать граф вручную\n"
-        "4. Добавить вершину\n"
-        "5. Добавить ребро\n"
-        "6. Отобразить список вершин\n"
-        "7. Определить степень вершины графа\n"
-        "8. Найти кратчайший путь между вершинами (метод Дейкстры)\n"
-        "9. Тестовый граф №8\n"
+    string menu = "\tРабота со взешенным графом\n"
+        "1. Подготовить тестовый граф №1\n"
+        "2. Подготовить тестовый граф №8\n"
+        "3. Подготовить тестовый граф №9\n"
+        "4. (Пере)Создать граф вручную\n"
+        "5. Добавить вершину\n"
+        "6. Добавить ребро\n"
+        "7. Отобразить список вершин\n"
+        "8. Определить степень вершины графа\n"
+        "9. Найти кратчайший путь между вершинами (метод Дейкстры)\n"
         "0. Выход\n"
         "Выбор: ";
     while(choice != 0){
@@ -130,20 +129,26 @@ int main(){
             if(g != nullptr){
                 delete g;
             }
-            g = test9();
+            g = test8();
             break;
         case 3:
             if(g != nullptr){
                 delete g;
             }
-            g = new Graph();
+            g = test9();
             break;
         case 4:
+            if(g != nullptr){
+                delete g;
+            }
+            g = new Graph();
+            break;
+        case 5:
             cout << "Название вершины: ";
             cin >> name;
             g->addNode(name);
             break;
-        case 5:
+        case 6:
             cout << "Первая вершина ребра: ";
             cin >> name;
             names.push_back(name);
@@ -157,16 +162,17 @@ int main(){
                 cin.clear();
                 cin >> choice;
             }
-            g->addBidirectionalPath(names[0], names[1], choice);
+            g->addPath(names[0], names[1], choice);
+            choice = -1;
             break;
-        case 6:
+        case 7:
             if(g != nullptr){
                 g->printNodes();
             }else{
                 cout << "Граф еще не создан, отображать нечего" << endl;
             }
             break;
-        case 7:
+        case 8:
             if(g != nullptr){
                 cout << "Укажите название вершины: ";
                 cin >> name;
@@ -175,7 +181,7 @@ int main(){
                 }
             }
             break;
-        case 8:
+        case 9:
             if(g != nullptr){
                 cout << "Начальная вершина: ";
                 cin >> name;
@@ -187,12 +193,6 @@ int main(){
             }else{
                 cout << "Граф еще не создан, нет исходных данных для поиска пути" << endl;
             }
-            break;
-        case 9:
-            if(g != nullptr){
-                delete g;
-            }
-            g = test8();
             break;
         default:
             cout << "Выход..." << endl;
