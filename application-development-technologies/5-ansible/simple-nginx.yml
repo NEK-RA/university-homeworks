@@ -1,0 +1,22 @@
+---
+- name: Install NGINX to Webservers
+  hosts: webservers
+  become: yes
+
+  tasks:
+    
+  - name: NGINX installation
+    apt:
+      name=nginx state=present update_cache=yes
+    when:
+      ansible_os_family == "Debian"
+    notify:
+      - NGINX Systemd
+
+  handlers:
+  - name: NGINX Systemd
+    systemd:
+      name: nginx
+      enabled: yes
+      state: started
+

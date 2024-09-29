@@ -1,0 +1,17 @@
+---
+- name: Install and config Nginx via Role, Install Figlet
+  hosts: webservers
+  become: yes
+  roles:
+  - nginx
+
+  tasks:
+  - name: "Install package by variant: 15 -> figlet"
+    apt:
+      name: figlet
+      state: present
+      update_cache: yes
+    when:
+      ansible_os_family: Debian
+
+

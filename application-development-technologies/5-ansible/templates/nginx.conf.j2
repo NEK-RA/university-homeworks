@@ -1,0 +1,27 @@
+# Пользователь, из-под которого будет запущен nginx
+user {{ nginx_user }};
+
+# Количество рабочих процессов, которые будет задействовать nginx
+worker_processes {{ worker_processes }};
+
+error_log /var/log/nginx/error.log warn;
+pid /var/run/nginx.pid;
+
+events {
+  # Число соединений, которое может поддерживать каждый процесс
+  worker_connections {{ worker_connections }};
+}
+
+http {
+  include /etc/nginx/mime.types;
+  default_type application/octet-stream;
+  keepalive_timeout 60;
+  gzip on;
+  server {
+    access_log off;
+    location / {
+        root /usr/share/nginx/html;
+        try_files $uri $uri/ $uri.html /index.html;
+    }
+  }
+}

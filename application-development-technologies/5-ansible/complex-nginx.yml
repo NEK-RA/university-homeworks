@@ -1,0 +1,53 @@
+---
+- name: Install and config Nginx
+  hosts: webservers
+  become: yes
+
+  vars:
+    html_dir: /usr/share/nginx/html
+    greeting: "Hello Everybody!"
+
+  tasks:
+  - name: Install Nginx
+    apt:
+      name=nginx state=present update_cache=yes
+    when:
+      ansible_os_family == "Debian"
+    notify:
+      - Nginx Systemd
+
+  - name: Delete default HTML files
+    shell: /bin/rm -rf /usr/share/nginx/html/*.html
+    args:
+      warn: false
+
+  - name: Replace config file
+    vars:
+      nginx_user: user
+      worker_processes: 2
+      worker_connections: 256
+    template:
+      src: templates/nginx.conf.j2
+      dest: /etc/nginx/nginx.conf
+      mode: 0644
+    register: result
+    failed_when: result.failed == true
+    notify: Reload Nginx
+
+  - name: Copy index file
+    copy: src=files/index.html dest={{ html_dir }} mode=0644
+    notify: Reload Nginx
+  
+  - name: Generate dynamic HTML from template
+    template:
+      src=templates/hello.html.j2 dest={{ html_dir }}/hello.html owner=root mode=0644
+    notify: Reload Nginx
+  
+  handlers:
+  - name: Nginx Systemd
+    systemd:
+      name: nginx
+      enabled: yes
+      state: started
+  - name: Reload Nginx
+    systemd: name=nginx state=reloaded
