@@ -16,4 +16,11 @@
 
 - [Программирование на Java (3 семестр - осень 2023)](programming-in-java/)
 - [Конфигурационное управление (3 семестр - осень 2023)](configuration-management/)
-- [Структуры и алгоритмы обработки данных (2 семестр - весна 2023)](data-structs-and-processing-algorithms/part-2)
+- [Структуры и алгоритмы обработки данных продолжение (3 семестр - осень 2023)](data-structs-and-processing-algorithms/part-2)
+- [Разработка клиентских частей интернет ресурсов (3 семестр - осень 2023)](clientside-of-internet-resources/) - HTML + JS + CSS
+- [Технологии разработки программных приложений (4 семестр - весна 2024))](application-development-technologies/)
+- [Программирование на Python (4 семестр - весна 2024)](python-programming/)
+
+## Курс 3
+
+- [Разработка серверных частей интернет ресурсов (5 семестр - осень 2024)](serverside-of-internet-resources/) - PHP, Apache2, NGINX, MySQL, Docker Compose, ? (по предварительной информации последняя работа будет с переходом на какой-то другой язык)
