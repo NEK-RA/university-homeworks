@@ -1,0 +1,32 @@
+version: '3'
+
+name: sspd_work1
+
+services:
+  db:
+    image: mysql
+    volumes:
+      - sspd_work1:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: appDB
+      MYSQL_USER: User
+      MYSQL_PASSWORD: resU
+    ports:
+    - 3306:3306
+
+
+  web_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:80
+    restart: always
+    depends_on:
+      - db
+
+volumes:
+  sspd_work1:
